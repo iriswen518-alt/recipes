@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"><meta name="theme-color" content="#003D91"><title>我的料理</title><style>
+:root{--ink:#1f2937;--sub:#6b7280;--line:#e8edf1;--accent:#019AB3;--deep:#003D91;--accent2:#17B5AD;--soft:#eef6f8;--warm:#fff7ed;--bg:#f4f7f9;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;color:var(--ink);background:var(--bg);line-height:1.6;
+font-family:-apple-system,"Noto Sans CJK TC","PingFang TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:640px;margin:0 auto;padding:18px 14px 60px;}
+header{text-align:center;padding:10px 0 14px;}
+header h1{margin:0;font-size:26px;color:var(--deep);}
+header .sub{color:var(--sub);font-size:13px;margin-top:4px;}
+.search{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 8px;}
+.search input{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:12px;font-size:16px;
+background:#fff;outline:none;font-family:inherit;}
+.search input:focus{border-color:var(--accent);}
+.chips-nav{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 16px;}
+.chips-nav a{font-size:13px;background:#fff;border:1px solid var(--line);color:var(--deep);
+padding:6px 13px;border-radius:999px;text-decoration:none;font-weight:600;}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 18px 12px;
+margin:0 0 16px;box-shadow:0 2px 10px rgba(0,0,0,.05);scroll-margin-top:64px;}
+.card .head{border-bottom:3px solid var(--accent);padding-bottom:10px;margin-bottom:14px;}
+.card .head h2{margin:0;font-size:21px;color:var(--deep);}
+.meta{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;}
+.chip{background:var(--soft);color:var(--deep);font-size:12px;padding:3px 10px;border-radius:999px;font-weight:600;}
+.sec{margin-bottom:16px;}
+.sec h3{font-size:16px;color:var(--accent2);margin:0 0 9px;border-left:5px solid var(--accent2);padding-left:9px;}
+table{width:100%;border-collapse:collapse;}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:14.5px;}
+th{background:var(--soft);color:var(--deep);font-weight:700;}
+tr:last-child td{border-bottom:none;}
+ol{padding-left:0;counter-reset:step;list-style:none;margin:0;}
+ol li{position:relative;padding:9px 0 9px 40px;border-bottom:1px dashed var(--line);font-size:15px;}
+ol li:last-child{border-bottom:none;}
+ol li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;width:27px;height:27px;
+border-radius:50%;background:linear-gradient(135deg,var(--deep),var(--accent));color:#fff;font-weight:700;
+display:flex;align-items:center;justify-content:center;font-size:14px;}
+ol li strong{color:var(--deep);}
+.tip{background:var(--warm);border:1px solid #fed7aa;border-radius:12px;padding:11px 14px;font-size:13.5px;}
+.tip h3{color:#b45309;border-color:#f59e0b;}
+.totop{position:fixed;right:16px;bottom:18px;width:46px;height:46px;border-radius:50%;
+background:var(--deep);color:#fff;border:0;font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.2);display:none;cursor:pointer;}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:24px;}
+</style></head><body><div class="wrap" id="top"><header><h1>🍲 我的料理</h1><div class="sub">家常營養食譜・共 14 道</div></header><div class="search"><input id="q" type="search" placeholder="🔍 搜尋菜名或食材…"></div><div class="chips-nav"><a href="#r0">黃金蛋炒飯（清冰箱）</a><a href="#r1">高麗菜炒五花肉</a><a href="#r2">香煎鮭魚</a><a href="#r3">電鍋蘿蔔排骨湯</a><a href="#r4">蒜香櫛瓜炒蛋</a><a href="#r5">蒜炒花椰菜</a><a href="#r6">番茄炒蛋</a><a href="#r7">烤盤雞肉時蔬</a><a href="#r8">味噌豆腐湯</a><a href="#r9">古早味滷肉飯</a><a href="#r10">一鍋雞腿炊飯</a><a href="#r11">一鍋到底的乾煎雞</a><a href="#r12">虱目魚蘆筍湯</a><a href="#r13">絲瓜炒雞蛋</a></div><div class="card" id="r0" data-name="黃金蛋炒飯（清冰箱）"><div class="head"><h2>🍲 黃金蛋炒飯（清冰箱）</h2><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">飯類 / 快手菜 / 清冰箱 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>隔夜白飯</td>
+<td>2 碗</td>
+<td>冷飯才會粒粒分明</td>
+</tr>
+<tr>
+<td>雞蛋</td>
+<td>2 顆</td>
+<td></td>
+</tr>
+<tr>
+<td>冰箱剩料</td>
+<td>適量</td>
+<td>火腿、紅蘿蔔丁、玉米、青豆都可</td>
+</tr>
+<tr>
+<td>蔥花</td>
+<td>適量</td>
+<td></td>
+</tr>
+<tr>
+<td>鹽、白胡椒</td>
+<td>適量</td>
+<td></td>
+</tr>
+<tr>
+<td>醬油</td>
+<td>1 小匙</td>
+<td>嗆鍋香（選用）</td>
+</tr>
+<tr>
+<td>油</td>
+<td>適量</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>蛋裹飯</strong>：蛋打散，與冷飯先拌勻（黃金炒飯的訣竅，每粒飯都裹蛋液）。</li>
+<li><strong>下鍋炒</strong>：熱鍋下油，倒入蛋飯，中大火快炒至粒粒分明、金黃。</li>
+<li><strong>加料</strong>：放入剩料一起炒香。</li>
+<li><strong>調味</strong>：加鹽、白胡椒，沿鍋邊嗆一點醬油，最後撒蔥花。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>用隔夜冷飯水分少，炒起來才不會黏成一團。</li>
+<li>蛋液先拌飯＝「黃金炒飯」，比後下蛋更香。</li>
+</ul></div>
+</div><div class="card" id="r1" data-name="高麗菜炒五花肉"><div class="head"><h2>🍲 高麗菜炒五花肉</h2><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 快手菜 / 一鍋到底 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>五花肉片</td>
+<td>200g</td>
+<td>全聯有現成火鍋肉片，切小段</td>
+</tr>
+<tr>
+<td>高麗菜</td>
+<td>半顆</td>
+<td>手撕成片，比刀切更脆甜</td>
+</tr>
+<tr>
+<td>蒜末</td>
+<td>1 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>醬油</td>
+<td>1 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>水或米酒</td>
+<td>2 大匙</td>
+<td>幫助炒軟</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>煸五花</strong>：冷鍋下五花肉片，中火煸到出油、邊緣微焦（不用加油）。</li>
+<li><strong>爆香</strong>：把肉撥到一邊，下蒜末炒香。</li>
+<li><strong>下高麗菜</strong>：放入高麗菜大火快炒，加一點水或米酒幫助炒軟。</li>
+<li><strong>調味</strong>：加醬油、鹽炒勻，高麗菜變軟出水即可起鍋。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>五花肉冷鍋慢煸才會逼出油脂，香而不膩。</li>
+<li>高麗菜用手撕，斷面不規則更入味、口感更脆。</li>
+</ul></div>
+</div><div class="card" id="r2" data-name="香煎鮭魚"><div class="head"><h2>🍲 香煎鮭魚</h2><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 Omega-3 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>鮭魚排</td>
+<td>2～3 片</td>
+<td>全聯冷凍區常見，退冰擦乾</td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許</td>
+<td>兩面撒勻</td>
+</tr>
+<tr>
+<td>黑胡椒</td>
+<td>適量</td>
+<td></td>
+</tr>
+<tr>
+<td>檸檬</td>
+<td>幾片</td>
+<td>起鍋擠汁解膩（選用）</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>擦乾調味</strong>：鮭魚退冰後用紙巾擦乾，兩面撒鹽與黑胡椒，靜置 5 分鐘。</li>
+<li><strong>冷鍋下魚</strong>：不沾鍋不用油（鮭魚自帶油脂），魚皮朝下放入，開中小火。</li>
+<li><strong>慢煎</strong>：煎約 4～5 分鐘不要動，魚皮金黃酥脆再翻面。</li>
+<li><strong>翻面煎熟</strong>：另一面再煎 2～3 分鐘，起鍋擠點檸檬汁。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>鮭魚油脂多，可不加油乾煎，皮會自然酥脆。</li>
+<li>不要一直翻動，定型後再翻才不會散。</li>
+</ul></div>
+</div><div class="card" id="r3" data-name="電鍋蘿蔔排骨湯"><div class="head"><h2>🍲 電鍋蘿蔔排骨湯</h2><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 40 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">湯品 / 電鍋免顧 / 高鈣補鈣 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>排骨</td>
+<td>約 400g</td>
+<td>全聯或市場，請攤商剁小塊</td>
+</tr>
+<tr>
+<td>白蘿蔔</td>
+<td>1 根</td>
+<td>去皮切塊</td>
+</tr>
+<tr>
+<td>紅蘿蔔</td>
+<td>半根</td>
+<td>切塊（顏色與甜味）</td>
+</tr>
+<tr>
+<td>薑片</td>
+<td>3 片</td>
+<td>去腥</td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>適量</td>
+<td>起鍋前調味</td>
+</tr>
+<tr>
+<td>水</td>
+<td>8 分滿內鍋</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>汆燙排骨</strong>：排骨冷水下鍋煮滾，撈起沖洗去血水雜質（湯才清）。</li>
+<li><strong>全部入鍋</strong>：排骨、白蘿蔔、紅蘿蔔、薑片放入電鍋內鍋，加水。</li>
+<li><strong>按下去</strong>：外鍋放 1.5 杯水，按下開關，跳起後再燜 10 分鐘。</li>
+<li><strong>調味</strong>：起鍋前加鹽調味即可。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>排骨先汆燙去血水，湯頭才會清澈不混濁。</li>
+<li>白蘿蔔燉久會回甜，是天然的鮮味來源。</li>
+</ul></div>
+</div><div class="card" id="r4" data-name="蒜香櫛瓜炒蛋"><div class="head"><h2>🍲 蒜香櫛瓜炒蛋</h2><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 蛋類 / 快手菜 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>櫛瓜</td>
+<td>1 條</td>
+<td>切半圓薄片</td>
+</tr>
+<tr>
+<td>雞蛋</td>
+<td>2 顆</td>
+<td>打散</td>
+</tr>
+<tr>
+<td>蒜末</td>
+<td>1 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>油</td>
+<td>適量</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>先炒蛋</strong>：熱鍋下油，倒蛋液半凝固撥散盛起備用（保持嫩）。</li>
+<li><strong>爆香蒜</strong>：原鍋補一點油，下蒜末炒香。</li>
+<li><strong>炒櫛瓜</strong>：放櫛瓜片中火炒到微軟、邊緣略透明。</li>
+<li><strong>合炒</strong>：倒回炒蛋，加鹽快速拌勻即可。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>櫛瓜不要炒過頭，保留一點脆度口感最好。</li>
+<li>蛋先炒起來再合，才不會老掉。</li>
+</ul></div>
+</div><div class="card" id="r5" data-name="蒜炒花椰菜"><div class="head"><h2>🍲 蒜炒花椰菜</h2><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 高纖維 C / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>花椰菜</td>
+<td>1 顆</td>
+<td>綠花椰或白花椰皆可，切小朵</td>
+</tr>
+<tr>
+<td>蒜末</td>
+<td>1 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>油</td>
+<td>適量</td>
+<td></td>
+</tr>
+<tr>
+<td>水</td>
+<td>1 鍋</td>
+<td>汆燙用</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>汆燙</strong>：水加一點鹽煮滾，花椰菜下鍋燙 1～2 分鐘，撈起瀝乾（顏色更翠綠、炒時更快熟）。</li>
+<li><strong>爆香</strong>：熱鍋下油，蒜末炒香。</li>
+<li><strong>快炒</strong>：放入燙好的花椰菜，中大火快炒。</li>
+<li><strong>調味</strong>：加鹽炒勻即可起鍋。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>先汆燙能去菜味、保翠綠，也縮短下鍋拌炒時間。</li>
+<li>莖部較硬，可切小一點或先下鍋燙久一點。</li>
+</ul></div>
+</div><div class="card" id="r6" data-name="番茄炒蛋"><div class="head"><h2>🍲 番茄炒蛋</h2><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蛋類 / 快手菜 / 家常料理 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雞蛋</td>
+<td>3 顆</td>
+<td>打散</td>
+</tr>
+<tr>
+<td>牛番茄</td>
+<td>2 顆</td>
+<td>切塊</td>
+</tr>
+<tr>
+<td>蔥</td>
+<td>1 根</td>
+<td>切段</td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>糖</td>
+<td>1 小匙</td>
+<td>平衡番茄酸味，孩子更愛</td>
+</tr>
+<tr>
+<td>番茄醬</td>
+<td>1 大匙</td>
+<td>提色提味（選用）</td>
+</tr>
+<tr>
+<td>油</td>
+<td>適量</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>先炒蛋</strong>：熱鍋下油，倒入蛋液，半凝固時撥散盛起備用（保持嫩）。</li>
+<li><strong>炒番茄</strong>：原鍋下番茄塊，中火炒到出汁變軟。</li>
+<li><strong>調味</strong>：加糖、鹽、番茄醬拌勻煮 1 分鐘。</li>
+<li><strong>合炒</strong>：倒回炒蛋快速拌勻，撒蔥段即可。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>蛋要先炒起來再合，才不會老。</li>
+<li>加一點糖能中和番茄的酸，是孩子愛吃的關鍵。</li>
+</ul></div>
+</div><div class="card" id="r7" data-name="烤盤雞肉時蔬"><div class="head"><h2>🍲 烤盤雞肉時蔬</h2><div class="meta"><span class="chip">備料 5 分鐘＋烤箱 25 分鐘</span><span class="chip">約 3 人份</span><span class="chip">烤箱料理 / 免顧火 / 一盤到底 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>去骨雞腿排</td>
+<td>2 片</td>
+<td>切大塊，醬油＋蒜末醃過</td>
+</tr>
+<tr>
+<td>馬鈴薯</td>
+<td>1 顆</td>
+<td>切塊</td>
+</tr>
+<tr>
+<td>紅蘿蔔</td>
+<td>半根</td>
+<td>切塊</td>
+</tr>
+<tr>
+<td>花椰菜</td>
+<td>半顆</td>
+<td>切小朵</td>
+</tr>
+<tr>
+<td>玉米筍</td>
+<td>數根</td>
+<td>全聯常見</td>
+</tr>
+<tr>
+<td>橄欖油</td>
+<td>2 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>鹽、黑胡椒</td>
+<td>適量</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>鋪盤</strong>：烤盤鋪烘焙紙，放上醃好的雞肉與所有蔬菜。</li>
+<li><strong>調味</strong>：淋橄欖油，撒鹽與黑胡椒，拌一拌讓食材均勻沾附。</li>
+<li><strong>進烤箱</strong>：200°C 烤 25 分鐘（中途翻一次更均勻）。</li>
+<li><strong>完成</strong>：雞肉金黃、蔬菜軟甜即可上桌。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>一盤就有蛋白質＋多種蔬菜，顏色豐富孩子更願意吃。</li>
+<li>根莖類切小塊一點才會跟雞肉同時熟。</li>
+</ul></div>
+</div><div class="card" id="r8" data-name="味噌豆腐湯"><div class="head"><h2>🍲 味噌豆腐湯</h2><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>嫩豆腐</td>
+<td>1 盒</td>
+<td>切小塊</td>
+</tr>
+<tr>
+<td>味噌</td>
+<td>2 大匙</td>
+<td>全聯冷藏區有</td>
+</tr>
+<tr>
+<td>海帶芽</td>
+<td>1 小把</td>
+<td>乾燥的，泡水備用</td>
+</tr>
+<tr>
+<td>蔬菜</td>
+<td>適量</td>
+<td>冰箱剩的高麗菜、菇類都可</td>
+</tr>
+<tr>
+<td>蔥花</td>
+<td>適量</td>
+<td></td>
+</tr>
+<tr>
+<td>水</td>
+<td>4 碗</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>煮滾</strong>：水煮滾，放入蔬菜與豆腐煮約 3 分鐘。</li>
+<li><strong>化味噌</strong>：味噌先用一點熱湯在碗裡調開，再倒回鍋中（避免結塊）。</li>
+<li><strong>不要大滾</strong>：加味噌後轉小火，不要再大滾（保留味噌香氣與益菌）。</li>
+<li><strong>完成</strong>：放海帶芽，撒蔥花，立刻關火上桌。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>味噌不要久煮大滾，香氣才不會跑掉。</li>
+<li>豆腐是高鈣高蛋白，對發育中的孩子很好。</li>
+</ul></div>
+</div><div class="card" id="r9" data-name="古早味滷肉飯"><div class="head"><h2>🍲 古早味滷肉飯</h2><div class="meta"><span class="chip">30 分鐘（多做可冷凍備用）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">飯類 / 常備菜 / 可冷凍 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>豬絞肉</td>
+<td>300g</td>
+<td>全聯有現成，選肥瘦相間</td>
+</tr>
+<tr>
+<td>蒜末</td>
+<td>2 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>紅蔥頭</td>
+<td>3 瓣</td>
+<td>切末，香氣關鍵（選用）</td>
+</tr>
+<tr>
+<td>醬油</td>
+<td>4 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>冰糖</td>
+<td>1 小匙</td>
+<td>古早味回甘</td>
+</tr>
+<tr>
+<td>五香粉</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>水</td>
+<td>1.5 碗</td>
+<td></td>
+</tr>
+<tr>
+<td>水煮蛋</td>
+<td>數顆</td>
+<td>一起滷更入味</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>爆香</strong>：熱鍋下少許油，炒香蒜末與紅蔥頭末。</li>
+<li><strong>炒肉</strong>：下絞肉炒到變白出油。</li>
+<li><strong>調味燉煮</strong>：加醬油、冰糖、五香粉炒勻，再加水與水煮蛋，小火燉 20 分鐘。</li>
+<li><strong>收汁</strong>：湯汁略收稠即可。淋在白飯上，配燙青菜。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>多做的部分放涼後分裝冷凍，可保存 2～3 週。</li>
+<li>平日只要加熱滷肉＋煮飯＋燙青菜，10 分鐘開飯。</li>
+</ul></div>
+</div><div class="card" id="r10" data-name="一鍋雞腿炊飯"><div class="head"><h2>🍲 一鍋雞腿炊飯</h2><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 30 分鐘</span><span class="chip">約 3 人份（媽媽＋2 個女兒）</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>去骨雞腿排</td>
+<td>2 片</td>
+<td>切塊，週末先用醬油＋蒜末醃好冷藏</td>
+</tr>
+<tr>
+<td>白米</td>
+<td>2 杯</td>
+<td>洗淨</td>
+</tr>
+<tr>
+<td>紅蘿蔔</td>
+<td>半根</td>
+<td>切小丁，補充 β-胡蘿蔔素</td>
+</tr>
+<tr>
+<td>玉米粒</td>
+<td>半碗</td>
+<td>罐頭或冷凍皆可，孩子愛吃</td>
+</tr>
+<tr>
+<td>醬油</td>
+<td>2 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>蒜末</td>
+<td>1 大匙</td>
+<td></td>
+</tr>
+<tr>
+<td>水</td>
+<td>2 杯</td>
+<td>與米同量</td>
+</tr>
+<tr>
+<td>蔥花</td>
+<td>適量</td>
+<td>起鍋裝飾</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>週末先醃</strong>：雞腿塊用醬油＋蒜末抓勻，冷藏（最省平日時間的關鍵）。</li>
+<li><strong>全部入鍋</strong>：洗好的米、雞腿塊、紅蘿蔔丁、玉米粒、醬油、水一起放入電鍋內鍋。</li>
+<li><strong>按下去</strong>：外鍋放 1 杯水，按下開關，跳起後再燜 10 分鐘。</li>
+<li><strong>拌勻上桌</strong>：打開拌一拌，撒蔥花。可再配一顆水煮蛋更營養。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>雞腿油脂讓飯更香，不用另外加油。</li>
+<li>一鍋有肉有菜有飯，對忙碌爸媽最友善。</li>
+</ul></div>
+</div><div class="card" id="r11" data-name="一鍋到底的乾煎雞"><div class="head"><h2>🍲 一鍋到底的乾煎雞</h2><div class="meta"><span class="chip">15 分鐘內</span><span class="chip">約 2 人份</span><span class="chip">肉類 / 快手菜 / 家常料理</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>去骨雞腿排</td>
+<td>2 片（約 500g）</td>
+<td>挑帶皮的，油脂豐富</td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許（約 0.8% 比例）</td>
+<td>均勻撒在兩面</td>
+</tr>
+<tr>
+<td>黑胡椒粉</td>
+<td>適量</td>
+<td>現磨香氣較佳</td>
+</tr>
+<tr>
+<td>蒜頭</td>
+<td>3～5 瓣</td>
+<td>切片，用於同鍋爆香</td>
+</tr>
+<tr>
+<td>辣椒</td>
+<td>1 條</td>
+<td>切圈，配色與提味用（選用）</td>
+</tr>
+<tr>
+<td>蔥花</td>
+<td>適量</td>
+<td>起鍋前裝飾用</td>
+</tr>
+<tr>
+<td>米酒</td>
+<td>1 小匙</td>
+<td>醃肉去腥用（選用）</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>備料與斷筋</strong>：去骨雞腿排洗淨，以廚房紙巾<strong>徹底擦乾表面水分</strong>（這是皮脆且下鍋不噴油的關鍵）。在肉面用刀尖劃幾刀或剖開厚肉（斷筋），防止受熱時收縮變形，也更容易入味。</li>
+<li><strong>醃漬</strong>：雞腿排兩面均勻撒上鹽、現磨黑胡椒與少許米酒，靜置醃製約 10-15 分鐘。</li>
+<li><strong>冷鍋下雞</strong>：平底鍋<strong>不需放油</strong>。將雞腿排<strong>雞皮面朝下</strong>放入乾燥的冷鍋中，才開<strong>中小火</strong>慢煎（冷鍋下能讓雞皮油脂慢慢逼出，受熱均勻且不易沾黏）。</li>
+<li><strong>皮面慢煎</strong>：期間不要頻繁翻動，讓油脂慢慢釋出。煎約 8-10 分鐘，直到邊緣呈現熟白，且雞皮呈現金黃焦脆。</li>
+<li><strong>翻面與燜煎</strong>：將雞腿排翻面。如果雞肉較厚，此時可<strong>蓋上鍋蓋</strong>，維持中小火燜煎約 3 分鐘，利用鍋內熱循環燜熟內部並鎖住水分。</li>
+<li><strong>爆香配料</strong>：利用鍋中逼出的天然雞油，將蒜片與辣椒圈放入鍋中空隙爆香。</li>
+<li><strong>搶酥收尾</strong>：開蓋，將雞腿排再次翻回皮朝下，轉大火煎約 30 秒至 1 分鐘（搶酥），逼出多餘油脂，使表皮更加金黃酥脆。</li>
+<li><strong>靜置與切塊</strong>：起鍋後<strong>靜置 2-3 分鐘</strong>（讓肉汁回流，切開時才不會流失水分），隨後切成適口大小，撒上蔥花即可上桌！</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li><strong>冷鍋慢煎是關鍵</strong>：若熱鍋下雞皮，雞皮會迅速收縮，油脂被鎖在裡面，且皮容易焦黑，內部卻未熟。</li>
+<li><strong>拭乾水分防噴油</strong>：下鍋前一定要將水分擦得非常乾淨，否則水油相遇會嚴重噴油，也會影響外皮的酥脆度。</li>
+<li><strong>靜置鎖汁</strong>：熱肉剛煎好時，切開會使肉汁大量流失。靜置幾分鐘能讓肉汁均勻回流，肉質才會軟嫩多汁。</li>
+</ul></div>
+</div><div class="card" id="r12" data-name="虱目魚蘆筍湯"><div class="head"><h2>🍲 虱目魚蘆筍湯</h2><div class="meta"><span class="chip">10 分鐘內（快速料理）</span><span class="chip">約 2 人份</span><span class="chip">湯品 / 台菜 / 初夏當季</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蘆筍</td>
+<td>半斤（約 300g）</td>
+<td>當季最甜</td>
+</tr>
+<tr>
+<td>虱目魚肚</td>
+<td>1 塊</td>
+<td>挑大塊的，本身有油</td>
+</tr>
+<tr>
+<td>蒜頭</td>
+<td>3 瓣</td>
+<td>切片，口感好</td>
+</tr>
+<tr>
+<td>嫩薑</td>
+<td>適量</td>
+<td>切薑絲，可一起吃</td>
+</tr>
+<tr>
+<td>水</td>
+<td>1000 c.c.</td>
+<td></td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>約 2.5～3 鹽匙</td>
+<td>先放 2 匙再補</td>
+</tr>
+<tr>
+<td>味精（味素）</td>
+<td>約半鹽匙</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 不用加油——虱目魚肚本身就有油。</p>
+</blockquote></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>起鍋</strong>：1000 c.c. 水下鍋，開火。</li>
+<li><strong>辛香料</strong>：蒜頭切片、嫩薑切絲，先放進水裡煮滾。</li>
+<li><strong>處理蘆筍</strong>：下半段較老的皮用刨刀刮掉（平放砧板上比較好刮、不會斷），去掉黑黑的蒂頭，切約 <strong>3 公分</strong>段，洗淨。</li>
+<li><strong>處理魚肚</strong>：虱目魚肚去刺（硬刺先做記號剪掉），剪成適口大小。</li>
+<li><strong>下鍋</strong>：水滾後先下虱目魚肚，再下蘆筍。</li>
+<li><strong>調味</strong>：加鹽約 2～3 鹽匙、味素半匙。</li>
+<li><strong>起鍋</strong>：滾一下即可關火，完成！</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li>蘆筍含<strong>膳食纖維</strong>和<strong>葉酸</strong>，是很受歡迎的蔬菜。</li>
+<li><strong>蘆筍皮別丟</strong>：刮下來的皮可以加水煮成「蘆筍汁」，冰起來當退火茶喝，口感像清爽飲料。</li>
+<li>初夏蘆筍很甜，和虱目魚的清甜是絕配。</li>
+</ul></div>
+</div><div class="card" id="r13" data-name="絲瓜炒雞蛋"><div class="head"><h2>🍲 絲瓜炒雞蛋</h2><div class="meta"><span class="chip">15 分鐘內</span><span class="chip">約 2～3 人份</span><span class="chip">蔬食 / 快手菜 / 眷村家常</span></div></div>
+<div class="sec"><h3>🛒 食材・調料</h3><table>
+<thead>
+<tr>
+<th>食材</th>
+<th>份量</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>絲瓜</td>
+<td>1 條</td>
+<td>挑表皮凸凸有紋路的（代表新鮮），光滑的多半是長途運送磨平的</td>
+</tr>
+<tr>
+<td>雞蛋</td>
+<td>3 顆</td>
+<td></td>
+</tr>
+<tr>
+<td>生薑</td>
+<td>適量</td>
+<td>切薑絲，一定要放（瓜類性寒，配薑去寒）；不愛薑味就少放</td>
+</tr>
+<tr>
+<td>蒜頭</td>
+<td>2～3 瓣</td>
+<td>切片，可有可無</td>
+</tr>
+<tr>
+<td>辣椒</td>
+<td>1 條</td>
+<td>切圈，主要配色用</td>
+</tr>
+<tr>
+<td>鹽</td>
+<td>少許</td>
+<td>蛋裡已有鹽，這裡只下一點點</td>
+</tr>
+<tr>
+<td>雞粉</td>
+<td>少許</td>
+<td>調蛋液用</td>
+</tr>
+<tr>
+<td>米酒</td>
+<td>少許</td>
+<td>調蛋液去腥</td>
+</tr>
+<tr>
+<td>味精</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>白胡椒粉</td>
+<td>少許</td>
+<td></td>
+</tr>
+<tr>
+<td>太白粉水</td>
+<td>少許</td>
+<td>最後勾薄芡</td>
+</tr>
+<tr>
+<td>油</td>
+<td>適量</td>
+<td>煎蛋的油要多一點</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sec"><h3>👩‍🍳 作法步驟</h3><ol>
+<li><strong>削皮</strong>：絲瓜頭尾切掉，削皮時<strong>不要削太深</strong>，留一點綠色——成品顏色漂亮、口感也比較清脆。</li>
+<li><strong>切法</strong>：剖開確認是嫩的，<strong>不要切成一片片的平片</strong>（容易一炒就軟）。改用斜的/滾刀切法，炒出來口感比較脆。</li>
+<li><strong>調蛋液</strong>：3 顆蛋打散，先下少許鹽、雞粉，再加米酒去腥，打勻。</li>
+<li><strong>辛香料</strong>：薑切絲、蒜切片、辣椒切圈，備好。</li>
+<li><strong>煎蛋</strong>：鐵鍋燒熱、油多一點也燒到微冒煙，蛋下、<strong>開大火</strong>，邊緣開花後像炒蛋／歐姆蛋那樣把外圈往內撥、拌入空氣才香；再把背面<strong>煎到焦黃</strong>（蛋香才會完全出來），盛起備用。</li>
+<li><strong>爆香</strong>：原鍋（炒完蛋很乾淨）加油，<strong>轉小火</strong>，先下薑絲再下蒜片爆香。</li>
+<li><strong>下絲瓜</strong>：絲瓜入鍋，<strong>開大火</strong>翻炒，讓每一面都沾到油。</li>
+<li><strong>加水燜</strong>：加<strong>一點點水</strong>，蓋鍋蓋，轉中小火燜約 <strong>3 分鐘</strong>（靠這點水製造熱循環，絲瓜才會軟化、出水；火太大下面會乾掉燒焦）。翻一下再蓋燜 <strong>2 分鐘</strong>，讓中間的囊熟透。</li>
+<li><strong>調味</strong>：下少許鹽、味精、白胡椒粉（蛋已有鹹味，鹽別多）。重點是<strong>保留清脆口感和翠綠色，不要燜爛</strong>。</li>
+<li><strong>回蛋</strong>：把煎好的蛋撥開回鍋，和絲瓜的甜水拌在一起，蛋香＋絲瓜清甜融合。</li>
+<li><strong>收尾</strong>：加一點辣椒圈配色，勾<strong>薄薄一層太白粉水</strong>（流芡），炒勻即可起鍋。趁熱吃最好吃。</li>
+</ol></div>
+<div class="sec tip"><h3>🌿 小知識</h3><ul>
+<li><strong>挑絲瓜</strong>：表皮凸凸有紋路 = 新鮮現採；表皮光滑 = 可能長途運送磨平的。</li>
+<li><strong>為什麼留綠皮、用斜切</strong>：削淺留綠＋斜切（非平片），炒出來更翠綠、更脆口，不會軟綿綿。</li>
+<li><strong>加水＋蓋蓋是關鍵</strong>：絲瓜雖是「水瓜」，但乾煎反而不出水、背面會焦；一點點水＋蓋蓋燜，才會軟化出水。</li>
+<li><strong>瓜類配薑</strong>：瓜類性寒，老一輩都會搭生薑平衡。</li>
+<li><strong>名字由來</strong>：成熟後變菜瓜布、一絲一絲，福建人叫它「絲瓜」；台灣人因易入菜叫「菜瓜」；廣東人因易出水叫「水瓜／掉瓜」；古名「蠻瓜」（南方傳入）。</li>
+<li><strong>身世</strong>：原產熱帶亞洲（印度至今仍有野生種）。李時珍《本草綱目》：「絲瓜，唐宋以前無所聞，今南北皆有之」——宋元以後才在中國普及。</li>
+<li><strong>延伸</strong>：同頻道點閱最高的是「絲瓜炒冬粉」（50 萬+），絲瓜盛產吃不完時可兩道輪著做。</li>
+</ul></div>
+</div><footer>家常營養 · 簡單快手</footer></div><button id="totop" title="回到頂端">↑</button><script>var q=document.getElementById('q');q.addEventListener('input',function(){var t=this.value.trim().toLowerCase();document.querySelectorAll('.card').forEach(function(c){var n=(c.getAttribute('data-name')||'').toLowerCase();var hit=!t||n.indexOf(t)>=0||c.textContent.toLowerCase().indexOf(t)>=0;c.style.display=hit?'block':'none';});});var bt=document.getElementById('totop');window.addEventListener('scroll',function(){bt.style.display=window.scrollY>400?'block':'none';});bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});</script></body></html>
