@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#003D91">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>料理路上</title>
+<title>健康料理</title>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="apple-mobile-web-app-title" content="料理路上">
+<meta name="apple-mobile-web-app-title" content="健康料理">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap');
@@ -46,11 +46,24 @@ body {
 
 
 .wrap {
-  max-width: 640px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 16px 110px;
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .wrap { padding: 0 32px 110px; }
+  header { padding: 52px 0 36px; }
+  .cats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .search { top: 0; padding: 14px 0 16px; }
+  .cat-name { font-size: 18px; }
+  .dish-title { font-size: 16px; }
+  ol li { font-size: 15px; }
+  td { font-size: 14px; }
+  td:nth-child(2) { font-size: 13px; }
+  td:nth-child(3) { font-size: 13px; }
 }
 
 /* ── HEADER ─────────────────────────────────────── */
@@ -426,7 +439,7 @@ ol li strong { color: var(--deep); }
   justify-content: space-around;
   align-items: stretch;
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  max-width: 640px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .bnav-btn {
@@ -509,7 +522,7 @@ footer {
 
   <header>
     <span class="header-glow">🍲</span>
-    <h1>料理路上</h1>
+    <h1>健康料理</h1>
     <div class="header-rule"></div>
     <p class="sub">共 46 道・手機查食譜</p>
   </header>
@@ -521,57 +534,16 @@ footer {
   </div>
 
   <div class="cats">
-    <div class="cat" data-cat="飯類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍚</span><span class="cat-name">飯類</span></span><span class="cat-right"><span class="cat-badge">11 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="高麗菜炒臘肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">高麗菜炒臘肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">肉類 / 快手菜 / 職業婦女 / 下飯</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>高麗菜</td>
-<td>300g</td>
-<td>手剝成片，比刀切更入味</td>
-</tr>
-<tr>
-<td>臘肉</td>
-<td>80g</td>
-<td>切薄片；若臘肉很鹹先水煮退鹹再切</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>2 瓣</td>
-<td>切片</td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>1 根</td>
-<td>切斜片，不吃辣可省</td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>10g（約 2 小匙（≈10ml））</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>3g（約 1/2 小匙（≈2.5ml））</td>
-<td></td>
-</tr>
-<tr>
-<td>白胡椒粉</td>
-<td>1g</td>
-<td>少許</td>
-</tr>
-<tr>
-<td>水</td>
-<td>少許</td>
-<td>高麗菜下鍋後撒少許水幫助軟化</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+    <div class="cat" data-cat="飯類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍚</span><span class="cat-name">飯類</span></span><span class="cat-right"><span class="cat-badge">11 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="高麗菜炒臘肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">高麗菜炒臘肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">肉類 / 快手菜 / 職業婦女 / 下飯</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 高麗菜 | 300g | 手剝成片，比刀切更入味 |</p>
+<p>| 臘肉 | 80g | 切薄片；若臘肉很鹹先水煮退鹹再切 |</p>
+<p>| 蒜頭 | 2 瓣 | 切片 |</p>
+<p>| 辣椒 | 1 根 | 切斜片，不吃辣可省 |</p>
+<p>| 米酒 | 10g（約 2 小匙（≈10ml）） | |</p>
+<p>| 糖 | 3g（約 1/2 小匙（≈2.5ml）） | |</p>
+<p>| 白胡椒粉 | 1g | 少許 |</p>
+<p>| 水 | 少許 | 高麗菜下鍋後撒少許水幫助軟化 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li>臘肉切薄片，若過鹹先放入滾水中燙 1 分鐘退鹹；高麗菜用手剝成片，蒜切片、辣椒切段。</li>
 <li>熱鍋不加油，下臘肉片小火煸出油脂，煸至微焦香。</li>
 <li>轉中大火，下蒜片、辣椒爆香，加入高麗菜大火翻炒。</li>
@@ -581,63 +553,30 @@ footer {
 <li><strong>臘肉自帶鹽分</strong>：不需另加鹽，起鍋前試味再決定。</li>
 <li><strong>臘肉先煸</strong>：不用額外加油，臘肉的豬油炒出來最香。</li>
 <li><strong>手剝不刀切</strong>：手剝的高麗菜斷面粗糙，炒時更吸附醬香。</li>
-</ul></div></div><button class="dish-btn" data-name="蔥爆牛肉" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">蔥爆牛肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">肉類 / 北方家常 / 快手菜 / 下飯</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>牛肉片（嫩肩或板腱）</td>
-<td>300g</td>
-<td>逆紋切薄片或細條</td>
-</tr>
-<tr>
-<td>青蔥</td>
-<td>4 根</td>
-<td>蔥白蔥綠分開切段</td>
-</tr>
-<tr>
-<td>洋蔥</td>
-<td>1/2 顆</td>
-<td>切絲</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>3 瓣</td>
-<td>切末</td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>1 支</td>
-<td>可省略</td>
-</tr>
-<tr>
-<td>食用油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>醃料</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 冷水 | 2 大匙（≈30ml） | 打水用，少量分次加 |<br />
-| 醬油 | 1 大匙（≈15ml） | |<br />
-| 米酒 | 1 大匙（≈15ml） | |<br />
-| 香油 | 1 小匙（≈5ml） | |<br />
-| 白胡椒粉 | 少許 | |<br />
-| 太白粉 | 1 大匙（≈15ml） | 最後才加 |</p>
-<p><strong>調味料</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 醬油 | 1 大匙（≈15ml） | |<br />
-| 蠔油 | 1 大匙（≈15ml） | |<br />
-| 糖 | 1/2 小匙（≈2.5ml） | |<br />
-| 紹興酒 | 1 大匙（≈15ml） | 可用米酒代替 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="蔥爆牛肉" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">蔥爆牛肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">肉類 / 北方家常 / 快手菜 / 下飯</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 牛肉片（嫩肩或板腱） | 300g | 逆紋切薄片或細條 |</p>
+<p>| 青蔥 | 4 根 | 蔥白蔥綠分開切段 |</p>
+<p>| 洋蔥 | 1/2 顆 | 切絲 |</p>
+<p>| 蒜頭 | 3 瓣 | 切末 |</p>
+<p>| 辣椒 | 1 支 | 可省略 |</p>
+<p>| 食用油 | 2 大匙（≈30ml） | |</p>
+<p><strong>醃料</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 冷水 | 2 大匙（≈30ml） | 打水用，少量分次加 |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 米酒 | 1 大匙（≈15ml） | |</p>
+<p>| 香油 | 1 小匙（≈5ml） | |</p>
+<p>| 白胡椒粉 | 少許 | |</p>
+<p>| 太白粉 | 1 大匙（≈15ml） | 最後才加 |</p>
+<p><strong>調味料</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 蠔油 | 1 大匙（≈15ml） | |</p>
+<p>| 糖 | 1/2 小匙（≈2.5ml） | |</p>
+<p>| 紹興酒 | 1 大匙（≈15ml） | 可用米酒代替 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>打水醃肉</strong>：牛肉切好後加冷水（分 2～3 次），用手攪拌將水分「打進」肉裡，再依序加醬油、米酒、香油、白胡椒，最後加太白粉抓勻，醃 10 分鐘。</li>
 <li>調味料預先混合備用。</li>
 <li>熱鍋下油燒至大火，牛肉平鋪入鍋，不要馬上翻動，煎約 30 秒後快速翻炒至七分熟（仍帶粉色），立即盛起備用。</li>
@@ -648,51 +587,22 @@ footer {
 <li><strong>打水關鍵</strong>：冷水分次打入，讓肉纖維吸飽水分，炒出來不柴、有彈性。</li>
 <li><strong>七分熟就起鍋</strong>：牛肉回鍋還會再熟，炒太久就老了。</li>
 <li><strong>大火全程</strong>：蔥爆最怕火不夠，溫油出水就變燜煮了。</li>
-</ul></div></div><button class="dish-btn" data-name="梅干扣肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">梅干扣肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">90 分鐘</span><span class="chip">約 4～5 人份</span><span class="chip">肉類 / 客家 / 電鍋免顧 / 下飯</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>五花肉</td>
-<td>500g</td>
-<td>整塊帶皮，不要先切</td>
-</tr>
-<tr>
-<td>梅干菜</td>
-<td>1 把（約 100g）</td>
-<td>傳統市場南北貨區購買</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>5 瓣</td>
-<td>切末</td>
-</tr>
-<tr>
-<td>薑</td>
-<td>2 小塊</td>
-<td>切片</td>
-</tr>
-<tr>
-<td>蔥</td>
-<td>1 根</td>
-<td>切段</td>
-</tr>
-</tbody>
-</table>
-<p><strong>調味料</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 醬油（生抽） | 1.5 大匙（≈22.5ml） | |<br />
-| 老抽（深色醬油） | 1 大匙（≈15ml） | 上色用 |<br />
-| 米酒 | 2 大匙（≈30ml） | |<br />
-| 冰糖 | 1/2 大匙（≈7.5ml） | 讓肉色光亮 |<br />
-| 白胡椒粉 | 1/2 小匙（≈2.5ml） | |<br />
-| 清水 | 適量 | 燉肉用 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="梅干扣肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">梅干扣肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">90 分鐘</span><span class="chip">約 4～5 人份</span><span class="chip">肉類 / 客家 / 電鍋免顧 / 下飯</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 五花肉 | 500g | 整塊帶皮，不要先切 |</p>
+<p>| 梅干菜 | 1 把（約 100g） | 傳統市場南北貨區購買 |</p>
+<p>| 蒜頭 | 5 瓣 | 切末 |</p>
+<p>| 薑 | 2 小塊 | 切片 |</p>
+<p>| 蔥 | 1 根 | 切段 |</p>
+<p><strong>調味料</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 醬油（生抽） | 1.5 大匙（≈22.5ml） | |</p>
+<p>| 老抽（深色醬油） | 1 大匙（≈15ml） | 上色用 |</p>
+<p>| 米酒 | 2 大匙（≈30ml） | |</p>
+<p>| 冰糖 | 1/2 大匙（≈7.5ml） | 讓肉色光亮 |</p>
+<p>| 白胡椒粉 | 1/2 小匙（≈2.5ml） | |</p>
+<p>| 清水 | 適量 | 燉肉用 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>處理梅干菜</strong>：梅干菜放入大量清水中反覆搓洗去細沙，再泡水 30 分鐘去除多餘鹽分，取出擠乾切碎備用。</li>
 <li><strong>煎五花肉</strong>：五花肉整塊下鍋，中火將四面煎至金黃上色。</li>
 <li><strong>燉肉</strong>：鍋中放薑片、蔥段，加醬油、老抽、米酒、冰糖、白胡椒及蓋過肉的清水，大火燒開後轉小火燉 20 分鐘，讓肉稍微入味。取出放涼，切成約 0.5cm 厚片。</li>
@@ -705,59 +615,22 @@ footer {
 <li><strong>蒸越久越好吃</strong>：蒸兩次共 80 分鐘是最低標，有時間的話外鍋加 3 杯水蒸一次更省事。</li>
 <li><strong>鹹度因品牌而異</strong>：不同廠牌梅干菜鹹度差很多，調味前先嚐梅干菜的鹹度再決定醬油用量。</li>
 <li><strong>隔夜更入味</strong>：蒸好放涼後冷藏一夜，隔天再蒸一次，味道更融合更好吃。</li>
-</ul></div></div><button class="dish-btn" data-name="客家小炒" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">客家小炒</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（不含泡魷魚）</span><span class="chip">約 4 人份</span><span class="chip">肉類 / 客家 / 下飯 / 宴客</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>五花肉（薄片）</td>
-<td>300g</td>
-<td>帶皮，切薄片煸出油脂</td>
-</tr>
-<tr>
-<td>黑豆干</td>
-<td>8 塊</td>
-<td>切厚片，炸至金黃更香</td>
-</tr>
-<tr>
-<td>乾魷魚</td>
-<td>1 片</td>
-<td>泡水 3 小時，逆紋切條</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>5 瓣</td>
-<td>拍扁</td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>1 支</td>
-<td>切斜片</td>
-</tr>
-<tr>
-<td>蒜苗</td>
-<td>3 根</td>
-<td>斜切段，白綠分開</td>
-</tr>
-<tr>
-<td>食用油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>靈魂醬汁（預先調好）</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 醬油 | 2 大匙（≈30ml） | |<br />
-| 醬油膏 | 1 大匙（≈15ml） | 讓醬色更濃稠 |<br />
-| 米酒 | 2 大匙（≈30ml） | |<br />
-| 糖 | 1 小匙（≈5ml） | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="客家小炒" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">客家小炒</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（不含泡魷魚）</span><span class="chip">約 4 人份</span><span class="chip">肉類 / 客家 / 下飯 / 宴客</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 五花肉（薄片） | 300g | 帶皮，切薄片煸出油脂 |</p>
+<p>| 黑豆干 | 8 塊 | 切厚片，炸至金黃更香 |</p>
+<p>| 乾魷魚 | 1 片 | 泡水 3 小時，逆紋切條 |</p>
+<p>| 蒜頭 | 5 瓣 | 拍扁 |</p>
+<p>| 辣椒 | 1 支 | 切斜片 |</p>
+<p>| 蒜苗 | 3 根 | 斜切段，白綠分開 |</p>
+<p>| 食用油 | 適量 | |</p>
+<p><strong>靈魂醬汁（預先調好）</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 醬油膏 | 1 大匙（≈15ml） | 讓醬色更濃稠 |</p>
+<p>| 米酒 | 2 大匙（≈30ml） | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>泡魷魚</strong>：乾魷魚冷水泡 3 小時（或剪成條泡 30 分鐘），泡發後逆紋切條，遇熱不蜷曲。</li>
 <li><strong>煸五花肉</strong>：中小火下五花肉片，煸至表面金黃出油、微焦脆，盛起備用，鍋中留油。</li>
 <li><strong>煎豆干</strong>：用煸肉的油將豆干兩面煎至金黃上色，盛起備用。</li>
@@ -769,52 +642,15 @@ footer {
 <li><strong>煸肉要耐心</strong>：中小火慢慢煸才能逼出油脂、外皮香脆，不要開大火否則外焦內生。</li>
 <li><strong>豆干要煎香</strong>：生豆干直接炒香氣不夠，煎到金黃上色才有焦香味。</li>
 <li><strong>鹹度調整</strong>：各品牌醬油鹹度不同，醬汁先少放，起鍋前試味再補。</li>
-</ul></div></div><button class="dish-btn" data-name="培根肉絲蛋炒飯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">培根肉絲蛋炒飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2 人份</span><span class="chip">主食 / 快手菜 / 剩飯再生 / 職業婦女</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>隔夜白飯</td>
-<td>2 碗（約 300g）</td>
-<td>冷藏過的飯粒散，炒出來才鬆</td>
-</tr>
-<tr>
-<td>培根</td>
-<td>4 片（約 80g）</td>
-<td>切小段；培根自帶鹹味和油脂</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>2 顆</td>
-<td>打散備用</td>
-</tr>
-<tr>
-<td>青蔥</td>
-<td>2 根</td>
-<td>切蔥花；蔥白蔥綠分開備用</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td>視口味調整，培根較鹹注意</td>
-</tr>
-<tr>
-<td>白胡椒粉</td>
-<td>少許</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="培根肉絲蛋炒飯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">培根肉絲蛋炒飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2 人份</span><span class="chip">主食 / 快手菜 / 剩飯再生 / 職業婦女</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 隔夜白飯 | 2 碗（約 300g） | 冷藏過的飯粒散，炒出來才鬆 |</p>
+<p>| 培根 | 4 片（約 80g） | 切小段；培根自帶鹹味和油脂 |</p>
+<p>| 雞蛋 | 2 顆 | 打散備用 |</p>
+<p>| 青蔥 | 2 根 | 切蔥花；蔥白蔥綠分開備用 |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 鹽 | 少許 | 視口味調整，培根較鹹注意 |</p>
+<p>| 白胡椒粉 | 少許 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li>培根切小段，熱鍋中火下培根，不加油，炒至微焦出油。</li>
 <li>下蔥白爆香，加入隔夜冷飯翻炒，用鍋鏟壓散飯粒，讓培根油脂均勻包覆每粒飯。</li>
 <li>將飯撥至鍋邊，中間倒入蛋液，半凝固時和飯一起拌炒至蛋花均勻。</li>
@@ -825,52 +661,15 @@ footer {
 <li><strong>培根不加油</strong>：培根油脂豐富，直接下鍋煸出油就夠，不要再加沙拉油。</li>
 <li><strong>大火鍋氣</strong>：炒飯關鍵是大火快炒，讓飯粒帶一點焦香，小火只會讓飯變軟。</li>
 <li><strong>無培根替代</strong>：換火腿丁、香腸丁或蝦米都可以，原理一樣。</li>
-</ul></div></div><button class="dish-btn" data-name="黃金蛋炒飯（清冰箱）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">黃金蛋炒飯（清冰箱）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">飯類 / 快手菜 / 清冰箱 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>隔夜白飯</td>
-<td>2 碗</td>
-<td>冷飯才會粒粒分明</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>2 顆</td>
-<td></td>
-</tr>
-<tr>
-<td>冰箱剩料</td>
-<td>適量</td>
-<td>火腿、紅蘿蔔丁、玉米、青豆都可</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽、白胡椒</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 小匙（≈5ml）</td>
-<td>嗆鍋香（選用）</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="黃金蛋炒飯（清冰箱）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">黃金蛋炒飯（清冰箱）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">飯類 / 快手菜 / 清冰箱 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 隔夜白飯 | 2 碗 | 冷飯才會粒粒分明 |</p>
+<p>| 雞蛋 | 2 顆 | |</p>
+<p>| 冰箱剩料 | 適量 | 火腿、紅蘿蔔丁、玉米、青豆都可 |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 鹽、白胡椒 | 適量 | |</p>
+<p>| 醬油 | 1 小匙（≈5ml） | 嗆鍋香（選用） |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>蛋裹飯</strong>：蛋打散，與冷飯先拌勻（黃金炒飯的訣竅，每粒飯都裹蛋液）。</li>
 <li><strong>下鍋炒</strong>：熱鍋下油，倒入蛋飯，中大火快炒至粒粒分明、金黃。</li>
 <li><strong>加料</strong>：放入剩料一起炒香。</li>
@@ -878,57 +677,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>用隔夜冷飯水分少，炒起來才不會黏成一團。</li>
 <li>蛋液先拌飯＝「黃金炒飯」，比後下蛋更香。</li>
-</ul></div></div><button class="dish-btn" data-name="親子丼（滑蛋雞肉丼）" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍱</span><span class="dish-title">親子丼（滑蛋雞肉丼）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>去骨雞腿排</td>
-<td>1 片</td>
-<td>切小塊</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>3 顆</td>
-<td>打散（不要太勻，保留蛋花感）</td>
-</tr>
-<tr>
-<td>洋蔥</td>
-<td>半顆</td>
-<td>切絲</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>味醂或糖</td>
-<td>1 大匙（≈15ml）</td>
-<td>甜味</td>
-</tr>
-<tr>
-<td>水</td>
-<td>半碗</td>
-<td></td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>白飯</td>
-<td>2～3 碗</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="親子丼（滑蛋雞肉丼）" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍱</span><span class="dish-title">親子丼（滑蛋雞肉丼）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 去骨雞腿排 | 1 片 | 切小塊 |</p>
+<p>| 雞蛋 | 3 顆 | 打散（不要太勻，保留蛋花感） |</p>
+<p>| 洋蔥 | 半顆 | 切絲 |</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 味醂或糖 | 1 大匙（≈15ml） | 甜味 |</p>
+<p>| 水 | 半碗 | |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 白飯 | 2～3 碗 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煮醬底</strong>：小鍋放醬油、味醂、水、洋蔥絲，煮滾。</li>
 <li><strong>煮雞肉</strong>：放入雞肉塊，中火煮約 5 分鐘到熟。</li>
 <li><strong>下蛋液</strong>：蛋液繞圈淋入，蓋鍋燜約 30～60 秒到半凝固（保持滑嫩）。</li>
@@ -936,52 +694,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>蛋液不要煮太久，半熟滑嫩才是親子丼精髓。</li>
 <li>洋蔥煮軟會回甜，孩子接受度高。</li>
-</ul></div></div><button class="dish-btn" data-name="日式薑燒豬肉（梅花肉片）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">日式薑燒豬肉（梅花肉片）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 日式 / 快手菜 / 下飯 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>梅花肉片</td>
-<td>250g</td>
-<td>火鍋肉片厚度剛好</td>
-</tr>
-<tr>
-<td>洋蔥</td>
-<td>1 顆</td>
-<td>切絲，甜味來源</td>
-</tr>
-<tr>
-<td>薑泥</td>
-<td>1 大匙（≈15ml）</td>
-<td>主角香氣</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>味醂或糖</td>
-<td>1 大匙（≈15ml）</td>
-<td>甜味</td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="日式薑燒豬肉（梅花肉片）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">日式薑燒豬肉（梅花肉片）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 日式 / 快手菜 / 下飯 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 梅花肉片 | 250g | 火鍋肉片厚度剛好 |</p>
+<p>| 洋蔥 | 1 顆 | 切絲，甜味來源 |</p>
+<p>| 薑泥 | 1 大匙（≈15ml） | 主角香氣 |</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 味醂或糖 | 1 大匙（≈15ml） | 甜味 |</p>
+<p>| 米酒 | 1 大匙（≈15ml） | |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>調醬</strong>：薑泥、醬油、味醂、米酒先在碗裡拌勻備用。</li>
 <li><strong>炒洋蔥</strong>：熱鍋下油，洋蔥絲炒到變軟微透明。</li>
 <li><strong>炒肉</strong>：下梅花肉片炒到變色。</li>
@@ -989,62 +710,17 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>醬汁先調好再下鍋，炒起來快又均勻不手忙腳亂。</li>
 <li>洋蔥炒軟回甜，平衡薑與醬油的味道。</li>
-</ul></div></div><button class="dish-btn" data-name="家常麻婆豆腐（不辣）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">家常麻婆豆腐（不辣）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">豆製品 / 快手菜 / 下飯 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>嫩豆腐</td>
-<td>1 盒</td>
-<td>切小丁</td>
-</tr>
-<tr>
-<td>豬絞肉</td>
-<td>100g</td>
-<td></td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>味噌或豆瓣（不辣）</td>
-<td>1 小匙（≈5ml）</td>
-<td>提鮮（選用）</td>
-</tr>
-<tr>
-<td>水</td>
-<td>半碗</td>
-<td></td>
-</tr>
-<tr>
-<td>太白粉水</td>
-<td>1 大匙（≈15ml）</td>
-<td>勾芡</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="家常麻婆豆腐（不辣）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">家常麻婆豆腐（不辣）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">豆製品 / 快手菜 / 下飯 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 嫩豆腐 | 1 盒 | 切小丁 |</p>
+<p>| 豬絞肉 | 100g | |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 味噌或豆瓣（不辣）| 1 小匙（≈5ml） | 提鮮（選用） |</p>
+<p>| 水 | 半碗 | |</p>
+<p>| 太白粉水 | 1 大匙（≈15ml） | 勾芡 |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>炒肉</strong>：熱鍋下油，蒜末與絞肉炒到變白出香。</li>
 <li><strong>調味</strong>：加醬油（與一點味噌）炒勻，加水煮滾。</li>
 <li><strong>下豆腐</strong>：輕輕放入豆腐丁，小火煮 3～5 分鐘讓豆腐入味（不要大力翻，會散）。</li>
@@ -1052,57 +728,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>不放辣椒、花椒，改味噌／醬油提鮮，就是孩子也能吃的版本。</li>
 <li>豆腐輕推不要大力翻，才能保持完整。</li>
-</ul></div></div><button class="dish-btn" data-name="古早味滷肉飯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">古早味滷肉飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍備用）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">飯類 / 常備菜 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>豬絞肉</td>
-<td>300g</td>
-<td>全聯有現成，選肥瘦相間</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>紅蔥頭</td>
-<td>3 瓣</td>
-<td>切末，香氣關鍵（選用）</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>4 大匙（≈60ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>冰糖</td>
-<td>1 小匙（≈5ml）</td>
-<td>古早味回甘</td>
-</tr>
-<tr>
-<td>五香粉</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>1.5 碗</td>
-<td></td>
-</tr>
-<tr>
-<td>水煮蛋</td>
-<td>數顆</td>
-<td>一起滷更入味</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="古早味滷肉飯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">古早味滷肉飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍備用）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">飯類 / 常備菜 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 豬絞肉 | 300g | 全聯有現成，選肥瘦相間 |</p>
+<p>| 蒜末 | 2 大匙（≈30ml） | |</p>
+<p>| 紅蔥頭 | 3 瓣 | 切末，香氣關鍵（選用） |</p>
+<p>| 醬油 | 4 大匙（≈60ml） | |</p>
+<p>| 冰糖 | 1 小匙（≈5ml） | 古早味回甘 |</p>
+<p>| 五香粉 | 少許 | |</p>
+<p>| 水 | 1.5 碗 | |</p>
+<p>| 水煮蛋 | 數顆 | 一起滷更入味 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>爆香</strong>：熱鍋下少許油，炒香蒜末與紅蔥頭末。</li>
 <li><strong>炒肉</strong>：下絞肉炒到變白出油。</li>
 <li><strong>調味燉煮</strong>：加醬油、冰糖、五香粉炒勻，再加水與水煮蛋，小火燉 20 分鐘。</li>
@@ -1110,57 +745,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>多做的部分放涼後分裝冷凍，可保存 2～3 週。</li>
 <li>平日只要加熱滷肉＋煮飯＋燙青菜，10 分鐘開飯。</li>
-</ul></div></div><button class="dish-btn" data-name="一鍋雞腿炊飯" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">一鍋雞腿炊飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 30 分鐘</span><span class="chip">約 3 人份（媽媽＋2 個女兒）</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>去骨雞腿排</td>
-<td>2 片</td>
-<td>切塊，週末先用醬油＋蒜末醃好冷藏</td>
-</tr>
-<tr>
-<td>白米</td>
-<td>2 杯（≈360ml）</td>
-<td>洗淨</td>
-</tr>
-<tr>
-<td>紅蘿蔔</td>
-<td>半根</td>
-<td>切小丁，補充 β-胡蘿蔔素</td>
-</tr>
-<tr>
-<td>玉米粒</td>
-<td>半碗</td>
-<td>罐頭或冷凍皆可，孩子愛吃</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>2 杯（≈360ml）</td>
-<td>與米同量</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td>起鍋裝飾</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="一鍋雞腿炊飯" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">一鍋雞腿炊飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 30 分鐘</span><span class="chip">約 3 人份（媽媽＋2 個女兒）</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 去骨雞腿排 | 2 片 | 切塊，週末先用醬油＋蒜末醃好冷藏 |</p>
+<p>| 白米 | 2 杯（≈360ml） | 洗淨 |</p>
+<p>| 紅蘿蔔 | 半根 | 切小丁，補充 β-胡蘿蔔素 |</p>
+<p>| 玉米粒 | 半碗 | 罐頭或冷凍皆可，孩子愛吃 |</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 水 | 2 杯（≈360ml） | 與米同量 |</p>
+<p>| 蔥花 | 適量 | 起鍋裝飾 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>週末先醃</strong>：雞腿塊用醬油＋蒜末抓勻，冷藏（最省平日時間的關鍵）。</li>
 <li><strong>全部入鍋</strong>：洗好的米、雞腿塊、紅蘿蔔丁、玉米粒、醬油、水一起放入電鍋內鍋。</li>
 <li><strong>按下去</strong>：外鍋放 1 杯水，按下開關，跳起後再燜 10 分鐘。</li>
@@ -1168,62 +762,17 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>雞腿油脂讓飯更香，不用另外加油。</li>
 <li>一鍋有肉有菜有飯，對忙碌爸媽最友善。</li>
-</ul></div></div></div></div><div class="cat" data-cat="麵食"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍝</span><span class="cat-name">麵食</span></span><span class="cat-right"><span class="cat-badge">4 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="麻醬麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍜</span><span class="dish-title">麻醬麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2 人份</span><span class="chip">麵食 / 快手菜 / 古早味 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>油麵或細麵</td>
-<td>2 人份</td>
-<td>全聯有現成油麵最快</td>
-</tr>
-<tr>
-<td>芝麻醬</td>
-<td>2 大匙（≈30ml）</td>
-<td>全聯雜貨區</td>
-</tr>
-<tr>
-<td>花生醬</td>
-<td>1 大匙（≈15ml）</td>
-<td>增香（選用）</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>烏醋或白醋</td>
-<td>1 小匙（≈5ml）</td>
-<td>提味（選用）</td>
-</tr>
-<tr>
-<td>蒜泥</td>
-<td>少許</td>
-<td>（選用）</td>
-</tr>
-<tr>
-<td>溫開水或煮麵水</td>
-<td>3～4 大匙（≈45～60ml）</td>
-<td>調稀醬汁</td>
-</tr>
-<tr>
-<td>蔥花、小黃瓜絲</td>
-<td>適量</td>
-<td>配料</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div></div></div><div class="cat" data-cat="麵食"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍝</span><span class="cat-name">麵食</span></span><span class="cat-right"><span class="cat-badge">4 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="麻醬麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍜</span><span class="dish-title">麻醬麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2 人份</span><span class="chip">麵食 / 快手菜 / 古早味 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 油麵或細麵 | 2 人份 | 全聯有現成油麵最快 |</p>
+<p>| 芝麻醬 | 2 大匙（≈30ml） | 全聯雜貨區 |</p>
+<p>| 花生醬 | 1 大匙（≈15ml） | 增香（選用） |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | |</p>
+<p>| 烏醋或白醋 | 1 小匙（≈5ml） | 提味（選用） |</p>
+<p>| 蒜泥 | 少許 | （選用） |</p>
+<p>| 溫開水或煮麵水 | 3～4 大匙（≈45～60ml） | 調稀醬汁 |</p>
+<p>| 蔥花、小黃瓜絲 | 適量 | 配料 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>調醬</strong>：碗中放芝麻醬、花生醬、醬油、糖、醋、蒜泥，分次加溫開水或煮麵水攪到滑順不結塊。</li>
 <li><strong>煮麵</strong>：麵條依包裝煮熟，撈起瀝乾（油麵燙一下即可）。</li>
 <li><strong>拌麵</strong>：趁熱把麵倒入醬碗快速拌勻，讓每根麵都裹上醬。</li>
@@ -1231,62 +780,17 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>芝麻醬很稠，一定要分次加水調開，否則會結塊拌不勻。</li>
 <li>用熱麵拌醬，香氣更出、醬更好裹。</li>
-</ul></div></div><button class="dish-btn" data-name="番茄肉醬義大利麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍝</span><span class="dish-title">番茄肉醬義大利麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">25 分鐘（肉醬可多做冷凍）</span><span class="chip">約 3 人份</span><span class="chip">麵食 / 義式 / 可冷凍醬 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>義大利麵</td>
-<td>約 240g</td>
-<td>全聯常見直麵</td>
-</tr>
-<tr>
-<td>豬絞肉</td>
-<td>250g</td>
-<td></td>
-</tr>
-<tr>
-<td>牛番茄</td>
-<td>3 顆</td>
-<td>切丁（或用市售番茄醬罐）</td>
-</tr>
-<tr>
-<td>洋蔥</td>
-<td>1 顆</td>
-<td>切丁</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>番茄醬</td>
-<td>3 大匙（≈45ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽、黑胡椒</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td>平衡酸味</td>
-</tr>
-<tr>
-<td>橄欖油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="番茄肉醬義大利麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍝</span><span class="dish-title">番茄肉醬義大利麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">25 分鐘（肉醬可多做冷凍）</span><span class="chip">約 3 人份</span><span class="chip">麵食 / 義式 / 可冷凍醬 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 義大利麵 | 約 240g | 全聯常見直麵 |</p>
+<p>| 豬絞肉 | 250g | |</p>
+<p>| 牛番茄 | 3 顆 | 切丁（或用市售番茄醬罐） |</p>
+<p>| 洋蔥 | 1 顆 | 切丁 |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 番茄醬 | 3 大匙（≈45ml） | |</p>
+<p>| 鹽、黑胡椒 | 適量 | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | 平衡酸味 |</p>
+<p>| 橄欖油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煮麵</strong>：一大鍋水加鹽煮滾，義大利麵依包裝時間煮，撈起留一點煮麵水。</li>
 <li><strong>炒肉醬</strong>：橄欖油炒香蒜末、洋蔥，下絞肉炒到變白。</li>
 <li><strong>燉番茄醬</strong>：加番茄丁、番茄醬、糖炒勻，小火燉 10 分鐘到濃稠，加鹽與黑胡椒調味。</li>
@@ -1294,67 +798,18 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>留一點煮麵水拌醬，醬汁更滑順好裹麵。</li>
 <li>肉醬一次多做，分裝冷凍可保存 2～3 週。</li>
-</ul></div></div><button class="dish-btn" data-name="家常炒麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍜</span><span class="dish-title">家常炒麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">麵食 / 快手菜 / 清冰箱 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>油麵</td>
-<td>2～3 人份</td>
-<td>全聯現成油麵，免煮最快</td>
-</tr>
-<tr>
-<td>豬肉絲</td>
-<td>150g</td>
-<td>醬油＋少許太白粉抓醃</td>
-</tr>
-<tr>
-<td>高麗菜</td>
-<td>1/4 顆</td>
-<td>切絲</td>
-</tr>
-<tr>
-<td>紅蘿蔔</td>
-<td>半根</td>
-<td>切絲</td>
-</tr>
-<tr>
-<td>蔥段</td>
-<td>1 根</td>
-<td></td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>蠔油</td>
-<td>1 大匙（≈15ml）</td>
-<td>增加鹹香（選用）</td>
-</tr>
-<tr>
-<td>水</td>
-<td>半碗</td>
-<td></td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="家常炒麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍜</span><span class="dish-title">家常炒麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">麵食 / 快手菜 / 清冰箱 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 油麵 | 2～3 人份 | 全聯現成油麵，免煮最快 |</p>
+<p>| 豬肉絲 | 150g | 醬油＋少許太白粉抓醃 |</p>
+<p>| 高麗菜 | 1/4 顆 | 切絲 |</p>
+<p>| 紅蘿蔔 | 半根 | 切絲 |</p>
+<p>| 蔥段 | 1 根 | |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 蠔油 | 1 大匙（≈15ml） | 增加鹹香（選用） |</p>
+<p>| 水 | 半碗 | |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>炒肉</strong>：熱鍋下油，蒜末與肉絲炒到變白盛起。</li>
 <li><strong>炒菜</strong>：原鍋下紅蘿蔔絲、高麗菜絲炒軟。</li>
 <li><strong>下麵調味</strong>：放入油麵，加醬油、蠔油、半碗水拌炒，讓麵條吸附醬汁上色。</li>
@@ -1362,57 +817,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>用現成油麵免水煮，下鍋拌炒最省時。</li>
 <li>加半碗水幫助麵條鬆開、均勻上色不黏鍋。</li>
-</ul></div></div><button class="dish-btn" data-name="古早味湯麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍜</span><span class="dish-title">古早味湯麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 2 人份</span><span class="chip">麵食 / 快手菜 / 暖湯 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>細麵或拉麵</td>
-<td>2 人份</td>
-<td></td>
-</tr>
-<tr>
-<td>青菜</td>
-<td>1 把</td>
-<td>小白菜、青江菜皆可</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>2 顆</td>
-<td>水波蛋或荷包蛋</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>香油</td>
-<td>幾滴</td>
-<td>提香</td>
-</tr>
-<tr>
-<td>高湯或水</td>
-<td>3～4 碗</td>
-<td>有高湯更鮮</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="古早味湯麵" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍜</span><span class="dish-title">古早味湯麵</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 2 人份</span><span class="chip">麵食 / 快手菜 / 暖湯 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 細麵或拉麵 | 2 人份 | |</p>
+<p>| 青菜 | 1 把 | 小白菜、青江菜皆可 |</p>
+<p>| 雞蛋 | 2 顆 | 水波蛋或荷包蛋 |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 香油 | 幾滴 | 提香 |</p>
+<p>| 高湯或水 | 3～4 碗 | 有高湯更鮮 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煮湯底</strong>：高湯或水煮滾，加醬油、鹽調味，可打入一顆蛋成蛋花或水波蛋。</li>
 <li><strong>燙青菜</strong>：青菜放入湯中燙熟撈起（或留在湯裡）。</li>
 <li><strong>煮麵</strong>：另起一鍋水把麵煮熟，撈起放入碗中（麵另煮湯才清不糊）。</li>
@@ -1420,49 +834,20 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>麵和湯分開煮，湯頭才清澈不糊、不會死鹹。</li>
 <li>有現成高湯（或前一天的排骨湯）湯頭更鮮甜。</li>
-</ul></div></div></div></div><div class="cat" data-cat="肉類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍖</span><span class="cat-name">肉類</span></span><span class="cat-right"><span class="cat-badge">12 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="豆腐雞塊（免油炸）" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">豆腐雞塊（免油炸）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">25 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">肉類 / 快手菜 / 氣炸鍋 / 高蛋白 / 職業婦女</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>雞胸肉</td>
-<td>360g</td>
-<td>去皮去筋，切小塊備用</td>
-</tr>
-<tr>
-<td>嫩豆腐</td>
-<td>400g</td>
-<td>用廚房紙巾按壓去除多餘水分</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>3g（約 1/2 小匙（≈2.5ml））</td>
-<td></td>
-</tr>
-<tr>
-<td>白胡椒粉</td>
-<td>1g</td>
-<td>少許</td>
-</tr>
-<tr>
-<td>玉米澱粉</td>
-<td>30g（約 2.5 大匙（≈37.5ml））</td>
-<td>幫助成型、外皮酥脆</td>
-</tr>
-</tbody>
-</table>
-<p><strong>蜂蜜芥末沾醬</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 美乃滋 | 40g（約 3 大匙（≈45ml）） | |<br />
-| 黃芥末醬 | 10g（約 2 小匙（≈10ml）） | |<br />
-| 芥末籽醬 | 5g（約 1 小匙（≈5ml）） | 可省略 |<br />
-| 蜂蜜 | 10g（約 1.5 小匙（≈7.5ml）） | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div></div></div><div class="cat" data-cat="肉類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍖</span><span class="cat-name">肉類</span></span><span class="cat-right"><span class="cat-badge">12 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="豆腐雞塊（免油炸）" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">豆腐雞塊（免油炸）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">25 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">肉類 / 快手菜 / 氣炸鍋 / 高蛋白 / 職業婦女</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 雞胸肉 | 360g | 去皮去筋，切小塊備用 |</p>
+<p>| 嫩豆腐 | 400g | 用廚房紙巾按壓去除多餘水分 |</p>
+<p>| 鹽 | 3g（約 1/2 小匙（≈2.5ml）） | |</p>
+<p>| 白胡椒粉 | 1g | 少許 |</p>
+<p>| 玉米澱粉 | 30g（約 2.5 大匙（≈37.5ml）） | 幫助成型、外皮酥脆 |</p>
+<p><strong>蜂蜜芥末沾醬</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 美乃滋 | 40g（約 3 大匙（≈45ml）） | |</p>
+<p>| 黃芥末醬 | 10g（約 2 小匙（≈10ml）） | |</p>
+<p>| 芥末籽醬 | 5g（約 1 小匙（≈5ml）） | 可省略 |</p>
+<p>| 蜂蜜 | 10g（約 1.5 小匙（≈7.5ml）） | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li>豆腐用紙巾包覆，輕壓擠出多餘水分（水分多雞塊容易散）。</li>
 <li>雞胸肉放入食物調理機，加入豆腐、鹽、白胡椒粉打成泥。（無調理機可用菜刀剁細再混合）</li>
 <li>加入玉米澱粉拌勻至有黏性，用湯匙整形成小塊狀。</li>
@@ -1474,41 +859,20 @@ footer {
 <li><strong>玉米澱粉是關鍵</strong>：讓雞塊有足夠黏度成型，也是外皮酥脆的來源。</li>
 <li><strong>雞胸肉＋豆腐比例</strong>：豆腐讓雞塊更軟嫩，不像純雞肉版那麼柴。</li>
 <li><strong>可以冷凍備用</strong>：做好整形後未烤的雞塊可冷凍，要吃時直接氣炸不用解凍。</li>
-</ul></div></div><button class="dish-btn" data-name="簡易鹽焗雞腿" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">簡易鹽焗雞腿</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">肉類 / 客家 / 烤箱料理 / 免顧火</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>雞腿（去骨或帶骨）</td>
-<td>2 支（約 700g）</td>
-<td>帶骨烤更香；去骨方便食用</td>
-</tr>
-<tr>
-<td>青蔥</td>
-<td>3 根</td>
-<td>切段，墊底用</td>
-</tr>
-<tr>
-<td>薑片</td>
-<td>5 片</td>
-<td>墊底用</td>
-</tr>
-</tbody>
-</table>
-<p><strong>鹽焗醃料（混合均勻）</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 鹽 | 1.5 小匙（≈7.5ml） | |<br />
-| 糖 | 1/2 小匙（≈2.5ml） | |<br />
-| 薑粉（沙薑粉） | 1 小匙（≈5ml） | 沙薑粉風味更道地 |<br />
-| 五香粉 | 1/4 小匙（≈1.25ml） | |<br />
-| 薑黃粉 | 1/4 小匙（≈1.25ml） | 上色用，可省略 |<br />
-| 米酒 | 1 大匙（≈15ml） | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="簡易鹽焗雞腿" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">簡易鹽焗雞腿</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">肉類 / 客家 / 烤箱料理 / 免顧火</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 雞腿（去骨或帶骨） | 2 支（約 700g） | 帶骨烤更香；去骨方便食用 |</p>
+<p>| 青蔥 | 3 根 | 切段，墊底用 |</p>
+<p>| 薑片 | 5 片 | 墊底用 |</p>
+<p><strong>鹽焗醃料（混合均勻）</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 鹽 | 1.5 小匙（≈7.5ml） | |</p>
+<p>| 糖 | 1/2 小匙（≈2.5ml） | |</p>
+<p>| 薑粉（沙薑粉） | 1 小匙（≈5ml） | 沙薑粉風味更道地 |</p>
+<p>| 五香粉 | 1/4 小匙（≈1.25ml） | |</p>
+<p>| 薑黃粉 | 1/4 小匙（≈1.25ml） | 上色用，可省略 |</p>
+<p>| 米酒 | 1 大匙（≈15ml） | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li>雞腿洗淨擦乾（水分多容易出水，影響皮脆度）。</li>
 <li>將混合好的醃料均勻塗抹在雞腿兩面，稍微按摩讓香料入味，靜置 15 分鐘（若時間充裕可冷藏醃 1 小時）。</li>
 <li>烤盤鋪烘焙紙，蔥段和薑片鋪在中間當床，雞腿皮面朝上放在蔥薑上。</li>
@@ -1519,51 +883,22 @@ footer {
 <li><strong>對流模式</strong>：強烈建議開對流風扇，熱風循環讓雞皮更均勻酥脆。</li>
 <li><strong>靜置再切</strong>：剛出爐馬上切肉汁會流光，靜置 5 分鐘讓汁液回吸。</li>
 <li><strong>沙薑粉</strong>：客家鹽焗雞的靈魂香料，超市南北貨區或傳統市場都有賣。</li>
-</ul></div></div><button class="dish-btn" data-name="沙茶牛肉燴飯" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">沙茶牛肉燴飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2 人份</span><span class="chip">肉類 / 快手菜 / 一鍋到底 / 職業婦女</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>牛肉片</td>
-<td>300g</td>
-<td>火鍋片或薄切牛肉；不建議切太厚</td>
-</tr>
-<tr>
-<td>菠菜</td>
-<td>1 把（約 150g）</td>
-<td>切段；也可換空心菜、青江菜</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>少許</td>
-<td>可省略</td>
-</tr>
-<tr>
-<td>太白粉</td>
-<td>適量</td>
-<td>稍微抓醃牛肉，增加滑嫩度</td>
-</tr>
-</tbody>
-</table>
-<p><strong>調味料</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 沙茶醬 | 70g（約 3～4 大匙（≈45～60ml）） | 牛頭牌沙茶醬 |<br />
-| 醬油 | 50g（約 3 大匙（≈45ml）） | |<br />
-| 鹽 | 5g（約 1 小匙（≈5ml）） | 視口味調整 |<br />
-| 糖 | 7g（約 1.5 小匙（≈7.5ml）） | 平衡鹹度 |<br />
-| 雞粉 | 3g（約 1/2 小匙（≈2.5ml）） | 可省略 |<br />
-| 水 | 200～250ml | 依喜好決定湯汁多少 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="沙茶牛肉燴飯" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">沙茶牛肉燴飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 2 人份</span><span class="chip">肉類 / 快手菜 / 一鍋到底 / 職業婦女</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 牛肉片 | 300g | 火鍋片或薄切牛肉；不建議切太厚 |</p>
+<p>| 菠菜 | 1 把（約 150g） | 切段；也可換空心菜、青江菜 |</p>
+<p>| 蒜末 | 少許 | |</p>
+<p>| 辣椒 | 少許 | 可省略 |</p>
+<p>| 太白粉 | 適量 | 稍微抓醃牛肉，增加滑嫩度 |</p>
+<p><strong>調味料</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 沙茶醬 | 70g（約 3～4 大匙（≈45～60ml）） | 牛頭牌沙茶醬 |</p>
+<p>| 醬油 | 50g（約 3 大匙（≈45ml）） | |</p>
+<p>| 鹽 | 5g（約 1 小匙（≈5ml）） | 視口味調整 |</p>
+<p>| 糖 | 7g（約 1.5 小匙（≈7.5ml）） | 平衡鹹度 |</p>
+<p>| 雞粉 | 3g（約 1/2 小匙（≈2.5ml）） | 可省略 |</p>
+<p>| 水 | 200～250ml | 依喜好決定湯汁多少 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li>牛肉片加少許太白粉抓拌均勻備用（增加滑嫩口感）；菠菜切段。</li>
 <li>熱鍋下油，爆香蒜末和辣椒，加入沙茶醬炒出香氣（約 30 秒）。</li>
 <li>加入水、醬油、鹽、糖、雞粉，大火煮開。</li>
@@ -1574,67 +909,18 @@ footer {
 <li><strong>牛肉不要久煮</strong>：牛肉變色就好，久煮容易柴，約 1～2 分鐘即可。</li>
 <li><strong>沙茶醬先炒香</strong>：沙茶醬先爆炒過香氣才會出來，不要直接加水。</li>
 <li><strong>換蔬菜很自由</strong>：菠菜、空心菜、青江菜、娃娃菜都適合，隨冰箱現有蔬菜調整。</li>
-</ul></div></div><button class="dish-btn" data-name="黑胡椒梅花豬排" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">黑胡椒梅花豬排</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 西式 / 快手菜 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>梅花肉排</td>
-<td>3 片</td>
-<td>約 1.5cm 厚</td>
-</tr>
-<tr>
-<td>鹽、黑胡椒</td>
-<td>適量</td>
-<td>醃肉</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 大匙（≈15ml）</td>
-<td>醃肉</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td>黑胡椒醬用</td>
-</tr>
-<tr>
-<td>黑胡椒粒</td>
-<td>1 小匙（≈5ml）</td>
-<td>現磨更香</td>
-</tr>
-<tr>
-<td>蠔油</td>
-<td>1 大匙（≈15ml）</td>
-<td>醬汁</td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>半碗</td>
-<td></td>
-</tr>
-<tr>
-<td>太白粉水</td>
-<td>少許</td>
-<td>勾醬（選用）</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="黑胡椒梅花豬排" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">黑胡椒梅花豬排</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 西式 / 快手菜 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 梅花肉排 | 3 片 | 約 1.5cm 厚 |</p>
+<p>| 鹽、黑胡椒 | 適量 | 醃肉 |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | 醃肉 |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | 黑胡椒醬用 |</p>
+<p>| 黑胡椒粒 | 1 小匙（≈5ml） | 現磨更香 |</p>
+<p>| 蠔油 | 1 大匙（≈15ml） | 醬汁 |</p>
+<p>| 糖 | 1 小匙（≈5ml） | |</p>
+<p>| 水 | 半碗 | |</p>
+<p>| 太白粉水 | 少許 | 勾醬（選用） |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>斷筋醃肉</strong>：豬排邊緣劃幾刀斷筋、用刀背輕拍，擦乾後加鹽、黑胡椒、醬油醃 10 分鐘。</li>
 <li><strong>煎豬排</strong>：熱鍋下油，中大火兩面各煎 2～3 分鐘到金黃熟透，盛起。</li>
 <li><strong>炒黑胡椒醬</strong>：原鍋下蒜末、黑胡椒粒炒香，加蠔油、糖、水煮滾，可勾薄芡。</li>
@@ -1642,47 +928,14 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>邊緣斷筋＋輕拍，豬排受熱才不會捲縮。</li>
 <li>豬排擦乾再下鍋，才煎得出金黃焦香。</li>
-</ul></div></div><button class="dish-btn" data-name="高麗菜炒五花肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥓</span><span class="dish-title">高麗菜炒五花肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>五花肉片</td>
-<td>200g</td>
-<td>全聯有現成火鍋肉片，切小段</td>
-</tr>
-<tr>
-<td>高麗菜</td>
-<td>半顆</td>
-<td>手撕成片，比刀切更脆甜</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>水或米酒</td>
-<td>2 大匙（≈30ml）</td>
-<td>幫助炒軟</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="高麗菜炒五花肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥓</span><span class="dish-title">高麗菜炒五花肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 五花肉片 | 200g | 全聯有現成火鍋肉片，切小段 |</p>
+<p>| 高麗菜 | 半顆 | 手撕成片，比刀切更脆甜 |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 水或米酒 | 2 大匙（≈30ml） | 幫助炒軟 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煸五花</strong>：冷鍋下五花肉片，中火煸到出油、邊緣微焦（不用加油）。</li>
 <li><strong>爆香</strong>：把肉撥到一邊，下蒜末炒香。</li>
 <li><strong>下高麗菜</strong>：放入高麗菜大火快炒，加一點水或米酒幫助炒軟。</li>
@@ -1690,52 +943,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>五花肉冷鍋慢煸才會逼出油脂，香而不膩。</li>
 <li>高麗菜用手撕，斷面不規則更入味、口感更脆。</li>
-</ul></div></div><button class="dish-btn" data-name="韓式烤五花肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥓</span><span class="dish-title">韓式烤五花肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">20 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">肉類 / 韓式 / 派對共餐 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>五花肉片</td>
-<td>300g</td>
-<td>全聯火鍋肉片或韓式烤肉片</td>
-</tr>
-<tr>
-<td>鹽、黑胡椒</td>
-<td>少許</td>
-<td>簡單調味</td>
-</tr>
-<tr>
-<td>蒜片</td>
-<td>數片</td>
-<td>一起煎香</td>
-</tr>
-<tr>
-<td>生菜</td>
-<td>1 包</td>
-<td>萵苣／美生菜，包肉用</td>
-</tr>
-<tr>
-<td>白飯</td>
-<td>適量</td>
-<td>包進去</td>
-</tr>
-<tr>
-<td>韓式味噌醬或醬油膏</td>
-<td>適量</td>
-<td>沾醬（不辣）</td>
-</tr>
-<tr>
-<td>泡菜</td>
-<td>適量</td>
-<td>大人配（孩子可省）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="韓式烤五花肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥓</span><span class="dish-title">韓式烤五花肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">20 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">肉類 / 韓式 / 派對共餐 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 五花肉片 | 300g | 全聯火鍋肉片或韓式烤肉片 |</p>
+<p>| 鹽、黑胡椒 | 少許 | 簡單調味 |</p>
+<p>| 蒜片 | 數片 | 一起煎香 |</p>
+<p>| 生菜 | 1 包 | 萵苣／美生菜，包肉用 |</p>
+<p>| 白飯 | 適量 | 包進去 |</p>
+<p>| 韓式味噌醬或醬油膏 | 適量 | 沾醬（不辣） |</p>
+<p>| 泡菜 | 適量 | 大人配（孩子可省） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煎肉</strong>：平底鍋不用油，五花肉片中火煎到兩面金黃焦香、逼出油脂。</li>
 <li><strong>煎蒜</strong>：利用豬油把蒜片煎香一起吃。</li>
 <li><strong>簡單調味</strong>：撒少許鹽、黑胡椒即可（肉本身夠香）。</li>
@@ -1743,57 +959,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>五花肉自帶油脂，乾鍋煎不需另外加油。</li>
 <li>用生菜包飯包肉，孩子吃得開心也均衡。</li>
-</ul></div></div><button class="dish-btn" data-name="蜜汁叉燒（梅花肉）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">蜜汁叉燒（梅花肉）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">醃 30 分＋烤 30 分</span><span class="chip">約 4 人份（可分裝冷凍）</span><span class="chip">肉類 / 港式 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>梅花肉</td>
-<td>約 500g</td>
-<td>整塊，油花分布均勻</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>3 大匙（≈45ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>蜂蜜或麥芽糖</td>
-<td>2 大匙（≈30ml）</td>
-<td>蜜汁光澤</td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>五香粉</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>紅麴或叉燒醬</td>
-<td>1 大匙（≈15ml）</td>
-<td>上色（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="蜜汁叉燒（梅花肉）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">蜜汁叉燒（梅花肉）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">醃 30 分＋烤 30 分</span><span class="chip">約 4 人份（可分裝冷凍）</span><span class="chip">肉類 / 港式 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 梅花肉 | 約 500g | 整塊，油花分布均勻 |</p>
+<p>| 醬油 | 3 大匙（≈45ml） | |</p>
+<p>| 蜂蜜或麥芽糖 | 2 大匙（≈30ml） | 蜜汁光澤 |</p>
+<p>| 糖 | 1 大匙（≈15ml） | |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 五香粉 | 少許 | |</p>
+<p>| 米酒 | 1 大匙（≈15ml） | |</p>
+<p>| 紅麴或叉燒醬 | 1 大匙（≈15ml） | 上色（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>醃肉</strong>：梅花肉與所有調味料抓勻，冷藏醃至少 30 分鐘（隔夜更入味）。</li>
 <li><strong>預熱烤箱</strong>：200°C 預熱。肉放烤架下墊烤盤。</li>
 <li><strong>烤製刷醬</strong>：烤 15 分鐘後翻面、刷上醃醬，再烤 15 分鐘到表面焦糖油亮。</li>
@@ -1801,57 +976,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>中途刷醬 1～2 次，表面才會油亮上色。</li>
 <li>一次多烤幾條，放涼分裝冷凍，可保存 2～3 週。</li>
-</ul></div></div><button class="dish-btn" data-name="蒜泥白肉" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">蒜泥白肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">20 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 川式家常 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>五花肉</td>
-<td>1 條約 300g</td>
-<td>整條水煮後切片</td>
-</tr>
-<tr>
-<td>薑片</td>
-<td>3 片</td>
-<td>煮肉去腥</td>
-</tr>
-<tr>
-<td>蔥段</td>
-<td>1 根</td>
-<td>煮肉去腥</td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 大匙（≈15ml）</td>
-<td>煮肉去腥</td>
-</tr>
-<tr>
-<td>蒜泥</td>
-<td>2 大匙（≈30ml）</td>
-<td>醬汁主角</td>
-</tr>
-<tr>
-<td>醬油膏</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>香油</td>
-<td>少許</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="蒜泥白肉" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">蒜泥白肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">20 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 川式家常 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 五花肉 | 1 條約 300g | 整條水煮後切片 |</p>
+<p>| 薑片 | 3 片 | 煮肉去腥 |</p>
+<p>| 蔥段 | 1 根 | 煮肉去腥 |</p>
+<p>| 米酒 | 1 大匙（≈15ml） | 煮肉去腥 |</p>
+<p>| 蒜泥 | 2 大匙（≈30ml） | 醬汁主角 |</p>
+<p>| 醬油膏 | 2 大匙（≈30ml） | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | |</p>
+<p>| 香油 | 少許 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>水煮肉</strong>：整條五花肉冷水下鍋，加薑片、蔥段、米酒，中火煮約 15 分鐘到熟（筷子能穿透）。</li>
 <li><strong>冰鎮</strong>：撈起放涼或泡冰水一下（肉質更緊實好切）。</li>
 <li><strong>切薄片</strong>：逆紋切薄片排盤。</li>
@@ -1859,62 +993,17 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>煮好稍微冰鎮再切，肉片才不會散、切得漂亮。</li>
 <li>不加辣油，純蒜香醬油膏，就是孩子也能吃的版本。</li>
-</ul></div></div><button class="dish-btn" data-name="番茄燉雞" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍅</span><span class="dish-title">番茄燉雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍）</span><span class="chip">約 4 人份（可分裝冷凍）</span><span class="chip">肉類 / 番茄燉煮 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>去骨雞腿排</td>
-<td>2 片</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>牛番茄</td>
-<td>3 顆</td>
-<td>切塊（燉到化）</td>
-</tr>
-<tr>
-<td>洋蔥</td>
-<td>1 顆</td>
-<td>切丁</td>
-</tr>
-<tr>
-<td>馬鈴薯</td>
-<td>1 顆</td>
-<td>切塊（選用，更有飽足感）</td>
-</tr>
-<tr>
-<td>番茄醬</td>
-<td>2 大匙（≈30ml）</td>
-<td>增色提味</td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td>平衡酸味</td>
-</tr>
-<tr>
-<td>水</td>
-<td>1 碗</td>
-<td></td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="番茄燉雞" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍅</span><span class="dish-title">番茄燉雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍）</span><span class="chip">約 4 人份（可分裝冷凍）</span><span class="chip">肉類 / 番茄燉煮 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 去骨雞腿排 | 2 片 | 切塊 |</p>
+<p>| 牛番茄 | 3 顆 | 切塊（燉到化） |</p>
+<p>| 洋蔥 | 1 顆 | 切丁 |</p>
+<p>| 馬鈴薯 | 1 顆 | 切塊（選用，更有飽足感） |</p>
+<p>| 番茄醬 | 2 大匙（≈30ml） | 增色提味 |</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | 平衡酸味 |</p>
+<p>| 水 | 1 碗 | |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>炒香</strong>：熱鍋下油，洋蔥丁炒軟，下雞肉塊炒到變白。</li>
 <li><strong>炒番茄</strong>：加番茄塊炒到出汁變軟，加番茄醬炒勻。</li>
 <li><strong>燉煮</strong>：加醬油、糖、水（與馬鈴薯），中小火燉 20 分鐘。</li>
@@ -1922,52 +1011,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>番茄要燉到化，醬汁才濃郁酸甜。</li>
 <li>一鍋多做、分裝冷凍可保存 2～3 週。</li>
-</ul></div></div><button class="dish-btn" data-name="烤盤雞肉時蔬" data-diet="高蛋白飲食, 211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">烤盤雞肉時蔬</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋烤箱 25 分鐘</span><span class="chip">約 3 人份</span><span class="chip">烤箱料理 / 免顧火 / 一盤到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>去骨雞腿排</td>
-<td>2 片</td>
-<td>切大塊，醬油＋蒜末醃過</td>
-</tr>
-<tr>
-<td>馬鈴薯</td>
-<td>1 顆</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>紅蘿蔔</td>
-<td>半根</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>花椰菜</td>
-<td>半顆</td>
-<td>切小朵</td>
-</tr>
-<tr>
-<td>玉米筍</td>
-<td>數根</td>
-<td>全聯常見</td>
-</tr>
-<tr>
-<td>橄欖油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽、黑胡椒</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="烤盤雞肉時蔬" data-diet="高蛋白飲食, 211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">烤盤雞肉時蔬</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋烤箱 25 分鐘</span><span class="chip">約 3 人份</span><span class="chip">烤箱料理 / 免顧火 / 一盤到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 去骨雞腿排 | 2 片 | 切大塊，醬油＋蒜末醃過 |</p>
+<p>| 馬鈴薯 | 1 顆 | 切塊 |</p>
+<p>| 紅蘿蔔 | 半根 | 切塊 |</p>
+<p>| 花椰菜 | 半顆 | 切小朵 |</p>
+<p>| 玉米筍 | 數根 | 全聯常見 |</p>
+<p>| 橄欖油 | 2 大匙（≈30ml） | |</p>
+<p>| 鹽、黑胡椒 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>鋪盤</strong>：烤盤鋪烘焙紙，放上醃好的雞肉與所有蔬菜。</li>
 <li><strong>調味</strong>：淋橄欖油，撒鹽與黑胡椒，拌一拌讓食材均勻沾附。</li>
 <li><strong>進烤箱</strong>：200°C 烤 25 分鐘（中途翻一次更均勻）。</li>
@@ -1975,52 +1027,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>一盤就有蛋白質＋多種蔬菜，顏色豐富孩子更願意吃。</li>
 <li>根莖類切小塊一點才會跟雞肉同時熟。</li>
-</ul></div></div><button class="dish-btn" data-name="日式咖哩雞" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍛</span><span class="dish-title">日式咖哩雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">肉類 / 常備菜 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>去骨雞腿排</td>
-<td>2 片</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>馬鈴薯</td>
-<td>2 顆</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>紅蘿蔔</td>
-<td>1 根</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>洋蔥</td>
-<td>1 顆</td>
-<td>切丁，甜味來源</td>
-</tr>
-<tr>
-<td>日式咖哩塊</td>
-<td>半盒</td>
-<td>全聯有，選兒童／中辣</td>
-</tr>
-<tr>
-<td>水</td>
-<td>適量</td>
-<td>蓋過食材</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="日式咖哩雞" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍛</span><span class="dish-title">日式咖哩雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">肉類 / 常備菜 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 去骨雞腿排 | 2 片 | 切塊 |</p>
+<p>| 馬鈴薯 | 2 顆 | 切塊 |</p>
+<p>| 紅蘿蔔 | 1 根 | 切塊 |</p>
+<p>| 洋蔥 | 1 顆 | 切丁，甜味來源 |</p>
+<p>| 日式咖哩塊 | 半盒 | 全聯有，選兒童／中辣 |</p>
+<p>| 水 | 適量 | 蓋過食材 |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>炒香洋蔥</strong>：熱鍋下油，洋蔥丁炒到透明微焦（甜味關鍵）。</li>
 <li><strong>炒料</strong>：下雞肉塊炒到變白，加馬鈴薯、紅蘿蔔略炒。</li>
 <li><strong>燉煮</strong>：加水蓋過食材，中小火煮約 15 分鐘到馬鈴薯軟。</li>
@@ -2028,52 +1043,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>咖哩塊一定要關火後再放，才不會結塊燒焦。</li>
 <li>隔夜更入味，多做冷凍可保存 2～3 週。</li>
-</ul></div></div><button class="dish-btn" data-name="一鍋到底的乾煎雞" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">一鍋到底的乾煎雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘內</span><span class="chip">約 2 人份</span><span class="chip">肉類 / 快手菜 / 家常料理</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>去骨雞腿排</td>
-<td>2 片（約 500g）</td>
-<td>挑帶皮的，油脂豐富</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許（約 0.8% 比例）</td>
-<td>均勻撒在兩面</td>
-</tr>
-<tr>
-<td>黑胡椒粉</td>
-<td>適量</td>
-<td>現磨香氣較佳</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>3～5 瓣</td>
-<td>切片，用於同鍋爆香</td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>1 條</td>
-<td>切圈，配色與提味用（選用）</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td>起鍋前裝飾用</td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 小匙（≈5ml）</td>
-<td>醃肉去腥用（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="一鍋到底的乾煎雞" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">一鍋到底的乾煎雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘內</span><span class="chip">約 2 人份</span><span class="chip">肉類 / 快手菜 / 家常料理</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 去骨雞腿排 | 2 片（約 500g） | 挑帶皮的，油脂豐富 |</p>
+<p>| 鹽 | 少許（約 0.8% 比例） | 均勻撒在兩面 |</p>
+<p>| 黑胡椒粉 | 適量 | 現磨香氣較佳 |</p>
+<p>| 蒜頭 | 3～5 瓣 | 切片，用於同鍋爆香 |</p>
+<p>| 辣椒 | 1 條 | 切圈，配色與提味用（選用） |</p>
+<p>| 蔥花 | 適量 | 起鍋前裝飾用 |</p>
+<p>| 米酒 | 1 小匙（≈5ml） | 醃肉去腥用（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>備料與斷筋</strong>：去骨雞腿排洗淨，以廚房紙巾<strong>徹底擦乾表面水分</strong>（這是皮脆且下鍋不噴油的關鍵）。在肉面用刀尖劃幾刀或剖開厚肉（斷筋），防止受熱時收縮變形，也更容易入味。</li>
 <li><strong>醃漬</strong>：雞腿排兩面均勻撒上鹽、現磨黑胡椒與少許米酒，靜置醃製約 10-15 分鐘。</li>
 <li><strong>冷鍋下雞</strong>：平底鍋<strong>不需放油</strong>。將雞腿排<strong>雞皮面朝下</strong>放入乾燥的冷鍋中，才開<strong>中小火</strong>慢煎（冷鍋下能讓雞皮油脂慢慢逼出，受熱均勻且不易沾黏）。</li>
@@ -2086,37 +1064,12 @@ footer {
 <li><strong>冷鍋慢煎是關鍵</strong>：若熱鍋下雞皮，雞皮會迅速收縮，油脂被鎖在裡面，且皮容易焦黑，內部卻未熟。</li>
 <li><strong>拭乾水分防噴油</strong>：下鍋前一定要將水分擦得非常乾淨，否則水油相遇會嚴重噴油，也會影響外皮的酥脆度。</li>
 <li><strong>靜置鎖汁</strong>：熱肉剛煎好時，切開會使肉汁大量流失。靜置幾分鐘能讓肉汁均勻回流，肉質才會軟嫩多汁。</li>
-</ul></div></div></div></div><div class="cat" data-cat="海鮮"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🐟</span><span class="cat-name">海鮮</span></span><span class="cat-right"><span class="cat-badge">3 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="香煎鮭魚" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎鮭魚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 Omega-3 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>鮭魚排</td>
-<td>2～3 片</td>
-<td>全聯冷凍區常見，退冰擦乾</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td>兩面撒勻</td>
-</tr>
-<tr>
-<td>黑胡椒</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>檸檬</td>
-<td>幾片</td>
-<td>起鍋擠汁解膩（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div></div></div><div class="cat" data-cat="海鮮"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🐟</span><span class="cat-name">海鮮</span></span><span class="cat-right"><span class="cat-badge">3 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="香煎鮭魚" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎鮭魚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 Omega-3 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 鮭魚排 | 2～3 片 | 全聯冷凍區常見，退冰擦乾 |</p>
+<p>| 鹽 | 少許 | 兩面撒勻 |</p>
+<p>| 黑胡椒 | 適量 | |</p>
+<p>| 檸檬 | 幾片 | 起鍋擠汁解膩（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>擦乾調味</strong>：鮭魚退冰後用紙巾擦乾，兩面撒鹽與黑胡椒，靜置 5 分鐘。</li>
 <li><strong>冷鍋下魚</strong>：不沾鍋不用油（鮭魚自帶油脂），魚皮朝下放入，開中小火。</li>
 <li><strong>慢煎</strong>：煎約 4～5 分鐘不要動，魚皮金黃酥脆再翻面。</li>
@@ -2124,42 +1077,13 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>鮭魚油脂多，可不加油乾煎，皮會自然酥脆。</li>
 <li>不要一直翻動，定型後再翻才不會散。</li>
-</ul></div></div><button class="dish-btn" data-name="香煎虱目魚肚" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎虱目魚肚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>虱目魚肚</td>
-<td>2 片</td>
-<td>全聯／市場有無刺魚肚，退冰擦乾</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td>兩面撒</td>
-</tr>
-<tr>
-<td>白胡椒</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>薑絲</td>
-<td>少許</td>
-<td>去腥（選用）</td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 小匙（≈5ml）</td>
-<td>去腥（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="香煎虱目魚肚" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎虱目魚肚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 虱目魚肚 | 2 片 | 全聯／市場有無刺魚肚，退冰擦乾 |</p>
+<p>| 鹽 | 少許 | 兩面撒 |</p>
+<p>| 白胡椒 | 適量 | |</p>
+<p>| 薑絲 | 少許 | 去腥（選用） |</p>
+<p>| 米酒 | 1 小匙（≈5ml） | 去腥（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>擦乾調味</strong>：魚肚退冰後用紙巾徹底擦乾，兩面抹少許鹽、白胡椒（與米酒），靜置 5 分鐘。</li>
 <li><strong>冷鍋下魚</strong>：不沾鍋免加油（魚肚油脂多），魚皮面朝下放入冷鍋，開中小火。</li>
 <li><strong>慢煎定型</strong>：煎約 4～5 分鐘不要翻動，魚皮金黃酥脆再翻面。</li>
@@ -2167,52 +1091,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>魚肚一定要擦乾再下鍋，否則水油相遇會嚴重噴油。</li>
 <li>冷鍋下、定型後再翻，魚皮才酥脆不破。</li>
-</ul></div></div><button class="dish-btn" data-name="滑蛋蝦仁" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍤</span><span class="dish-title">滑蛋蝦仁</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 蛋類 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>蝦仁</td>
-<td>約 200g</td>
-<td>全聯冷凍蝦仁，退冰擦乾</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>3 顆</td>
-<td>打散，加少許鹽</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 小匙（≈5ml）</td>
-<td>蝦仁去腥（選用）</td>
-</tr>
-<tr>
-<td>太白粉</td>
-<td>少許</td>
-<td>蝦仁抓醃更脆嫩（選用）</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="滑蛋蝦仁" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍤</span><span class="dish-title">滑蛋蝦仁</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 蛋類 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 蝦仁 | 約 200g | 全聯冷凍蝦仁，退冰擦乾 |</p>
+<p>| 雞蛋 | 3 顆 | 打散，加少許鹽 |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 米酒 | 1 小匙（≈5ml） | 蝦仁去腥（選用） |</p>
+<p>| 太白粉 | 少許 | 蝦仁抓醃更脆嫩（選用） |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>醃蝦</strong>：蝦仁用少許鹽、米酒、太白粉抓勻，靜置 5 分鐘。</li>
 <li><strong>炒蝦</strong>：熱鍋下油，蝦仁炒到變色捲起，盛起備用。</li>
 <li><strong>半熟蛋</strong>：原鍋補油，倒蛋液，中小火輕推到半凝固。</li>
@@ -2220,42 +1107,13 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>蛋要半熟就起鍋，餘溫剛好，才滑嫩不老。</li>
 <li>蝦仁先炒起來，避免久煮變硬。</li>
-</ul></div></div></div></div><div class="cat" data-cat="蛋豆製品"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🥚</span><span class="cat-name">蛋豆製品</span></span><span class="cat-right"><span class="cat-badge">4 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="蒜香櫛瓜炒蛋" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍳</span><span class="dish-title">蒜香櫛瓜炒蛋</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 蛋類 / 快手菜 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>櫛瓜</td>
-<td>1 條</td>
-<td>切半圓薄片</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>2 顆</td>
-<td>打散</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div></div></div><div class="cat" data-cat="蛋豆製品"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🥚</span><span class="cat-name">蛋豆製品</span></span><span class="cat-right"><span class="cat-badge">4 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="蒜香櫛瓜炒蛋" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍳</span><span class="dish-title">蒜香櫛瓜炒蛋</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 蛋類 / 快手菜 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 櫛瓜 | 1 條 | 切半圓薄片 |</p>
+<p>| 雞蛋 | 2 顆 | 打散 |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>先炒蛋</strong>：熱鍋下油，倒蛋液半凝固撥散盛起備用（保持嫩）。</li>
 <li><strong>爆香蒜</strong>：原鍋補一點油，下蒜末炒香。</li>
 <li><strong>炒櫛瓜</strong>：放櫛瓜片中火炒到微軟、邊緣略透明。</li>
@@ -2263,52 +1121,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>櫛瓜不要炒過頭，保留一點脆度口感最好。</li>
 <li>蛋先炒起來再合，才不會老掉。</li>
-</ul></div></div><button class="dish-btn" data-name="番茄炒蛋" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍳</span><span class="dish-title">番茄炒蛋</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蛋類 / 快手菜 / 家常料理 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>雞蛋</td>
-<td>3 顆</td>
-<td>打散</td>
-</tr>
-<tr>
-<td>牛番茄</td>
-<td>2 顆</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>蔥</td>
-<td>1 根</td>
-<td>切段</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td>平衡番茄酸味，孩子更愛</td>
-</tr>
-<tr>
-<td>番茄醬</td>
-<td>1 大匙（≈15ml）</td>
-<td>提色提味（選用）</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="番茄炒蛋" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍳</span><span class="dish-title">番茄炒蛋</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蛋類 / 快手菜 / 家常料理 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 雞蛋 | 3 顆 | 打散 |</p>
+<p>| 牛番茄 | 2 顆 | 切塊 |</p>
+<p>| 蔥 | 1 根 | 切段 |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | 平衡番茄酸味，孩子更愛 |</p>
+<p>| 番茄醬 | 1 大匙（≈15ml） | 提色提味（選用） |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>先炒蛋</strong>：熱鍋下油，倒入蛋液，半凝固時撥散盛起備用（保持嫩）。</li>
 <li><strong>炒番茄</strong>：原鍋下番茄塊，中火炒到出汁變軟。</li>
 <li><strong>調味</strong>：加糖、鹽、番茄醬拌勻煮 1 分鐘。</li>
@@ -2316,42 +1137,13 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>蛋要先炒起來再合，才不會老。</li>
 <li>加一點糖能中和番茄的酸，是孩子愛吃的關鍵。</li>
-</ul></div></div><button class="dish-btn" data-name="日式茶碗蒸（水蒸蛋）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍮</span><span class="dish-title">日式茶碗蒸（水蒸蛋）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋蒸 15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蛋類 / 電鍋免顧 / 滑嫩好入口 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>雞蛋</td>
-<td>3 顆</td>
-<td>打散</td>
-</tr>
-<tr>
-<td>水或高湯</td>
-<td>蛋液的 1.5 倍</td>
-<td>滑嫩關鍵比例</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>蝦仁或玉米</td>
-<td>少許</td>
-<td>配料（選用）</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="日式茶碗蒸（水蒸蛋）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍮</span><span class="dish-title">日式茶碗蒸（水蒸蛋）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋蒸 15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蛋類 / 電鍋免顧 / 滑嫩好入口 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 雞蛋 | 3 顆 | 打散 |</p>
+<p>| 水或高湯 | 蛋液的 1.5 倍 | 滑嫩關鍵比例 |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 蝦仁或玉米 | 少許 | 配料（選用） |</p>
+<p>| 蔥花 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>調蛋液</strong>：蛋打散，加 1.5 倍的水或高湯與少許鹽，拌勻。</li>
 <li><strong>過篩</strong>：蛋液過篩一次（去泡沫，蒸出來才光滑無孔）。</li>
 <li><strong>入碗</strong>：倒入碗中，放上蝦仁或玉米，碗口蓋一層保鮮膜或鋁箔（防水滴）。</li>
@@ -2359,57 +1151,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>蛋與水 1：1.5 是滑嫩黃金比例。</li>
 <li>過篩＋鍋蓋留縫＝表面光滑無蜂窩孔的關鍵。</li>
-</ul></div></div><button class="dish-btn" data-name="家常紅燒豆腐" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">家常紅燒豆腐</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">豆製品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>板豆腐</td>
-<td>1 盒</td>
-<td>切厚片，比嫩豆腐好煎</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>蔥段</td>
-<td>1 根</td>
-<td></td>
-</tr>
-<tr>
-<td>醬油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>1 小匙（≈5ml）</td>
-<td>回甜</td>
-</tr>
-<tr>
-<td>水</td>
-<td>半碗</td>
-<td></td>
-</tr>
-<tr>
-<td>太白粉水</td>
-<td>少許</td>
-<td>勾薄芡（選用）</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="家常紅燒豆腐" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">家常紅燒豆腐</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">豆製品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 板豆腐 | 1 盒 | 切厚片，比嫩豆腐好煎 |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 蔥段 | 1 根 | |</p>
+<p>| 醬油 | 2 大匙（≈30ml） | |</p>
+<p>| 糖 | 1 小匙（≈5ml） | 回甜 |</p>
+<p>| 水 | 半碗 | |</p>
+<p>| 太白粉水 | 少許 | 勾薄芡（選用） |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煎豆腐</strong>：豆腐片擦乾，熱鍋下油，兩面煎到金黃，盛起。</li>
 <li><strong>爆香</strong>：原鍋下蒜末、蔥段炒香。</li>
 <li><strong>紅燒</strong>：加醬油、糖、水煮滾，放回豆腐，中小火燒 3～5 分鐘入味。</li>
@@ -2417,47 +1168,14 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>用板豆腐（老豆腐）才不易煎破。</li>
 <li>豆腐先擦乾再下鍋，才不會噴油、容易上色。</li>
-</ul></div></div></div></div><div class="cat" data-cat="湯品"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🥣</span><span class="cat-name">湯品</span></span><span class="cat-right"><span class="cat-badge">5 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="電鍋蘿蔔排骨湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">電鍋蘿蔔排骨湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 40 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">湯品 / 電鍋免顧 / 高鈣補鈣 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>排骨</td>
-<td>約 400g</td>
-<td>全聯或市場，請攤商剁小塊</td>
-</tr>
-<tr>
-<td>白蘿蔔</td>
-<td>1 根</td>
-<td>去皮切塊</td>
-</tr>
-<tr>
-<td>紅蘿蔔</td>
-<td>半根</td>
-<td>切塊（顏色與甜味）</td>
-</tr>
-<tr>
-<td>薑片</td>
-<td>3 片</td>
-<td>去腥</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>適量</td>
-<td>起鍋前調味</td>
-</tr>
-<tr>
-<td>水</td>
-<td>8 分滿內鍋</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div></div></div><div class="cat" data-cat="湯品"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🥣</span><span class="cat-name">湯品</span></span><span class="cat-right"><span class="cat-badge">5 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="電鍋蘿蔔排骨湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍖</span><span class="dish-title">電鍋蘿蔔排骨湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 40 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">湯品 / 電鍋免顧 / 高鈣補鈣 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 排骨 | 約 400g | 全聯或市場，請攤商剁小塊 |</p>
+<p>| 白蘿蔔 | 1 根 | 去皮切塊 |</p>
+<p>| 紅蘿蔔 | 半根 | 切塊（顏色與甜味） |</p>
+<p>| 薑片 | 3 片 | 去腥 |</p>
+<p>| 鹽 | 適量 | 起鍋前調味 |</p>
+<p>| 水 | 8 分滿內鍋 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>汆燙排骨</strong>：排骨冷水下鍋煮滾，撈起沖洗去血水雜質（湯才清）。</li>
 <li><strong>全部入鍋</strong>：排骨、白蘿蔔、紅蘿蔔、薑片放入電鍋內鍋，加水。</li>
 <li><strong>按下去</strong>：外鍋放 1.5 杯水，按下開關，跳起後再燜 10 分鐘。</li>
@@ -2465,57 +1183,16 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>排骨先汆燙去血水，湯頭才會清澈不混濁。</li>
 <li>白蘿蔔燉久會回甜，是天然的鮮味來源。</li>
-</ul></div></div><button class="dish-btn" data-name="番茄蛋花湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥚</span><span class="dish-title">番茄蛋花湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 開胃 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>牛番茄</td>
-<td>2 顆</td>
-<td>切塊</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>2 顆</td>
-<td>打散</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>糖</td>
-<td>少許</td>
-<td>平衡酸味</td>
-</tr>
-<tr>
-<td>太白粉水</td>
-<td>少許</td>
-<td>讓蛋花漂亮成形（選用）</td>
-</tr>
-<tr>
-<td>水</td>
-<td>4 碗</td>
-<td></td>
-</tr>
-<tr>
-<td>香油</td>
-<td>幾滴</td>
-<td>起鍋提香（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="番茄蛋花湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥚</span><span class="dish-title">番茄蛋花湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 開胃 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 牛番茄 | 2 顆 | 切塊 |</p>
+<p>| 雞蛋 | 2 顆 | 打散 |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 鹽 | 適量 | |</p>
+<p>| 糖 | 少許 | 平衡酸味 |</p>
+<p>| 太白粉水 | 少許 | 讓蛋花漂亮成形（選用） |</p>
+<p>| 水 | 4 碗 | |</p>
+<p>| 香油 | 幾滴 | 起鍋提香（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煮番茄</strong>：水煮滾，下番茄塊煮約 5 分鐘到軟出味。</li>
 <li><strong>調味</strong>：加鹽、糖調味，可勾一點薄芡。</li>
 <li><strong>沖蛋花</strong>：湯滾時把蛋液繞圈緩緩倒入，靜置 3 秒再輕推（蛋花才細緻漂亮）。</li>
@@ -2523,52 +1200,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>蛋液要在湯滾時繞圈慢倒、先別攪，蛋花才會成絲不散。</li>
 <li>一點點糖能讓番茄湯更圓潤好喝。</li>
-</ul></div></div><button class="dish-btn" data-name="玉米濃湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥣</span><span class="dish-title">玉米濃湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 西式 / 香濃 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>玉米粒</td>
-<td>1 罐</td>
-<td>全聯罐頭，連汁一起用</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>1 顆</td>
-<td>打散做蛋花</td>
-</tr>
-<tr>
-<td>牛奶</td>
-<td>1 碗</td>
-<td>增加香濃（可用鮮奶油）</td>
-</tr>
-<tr>
-<td>水</td>
-<td>1～2 碗</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>太白粉水</td>
-<td>1 大匙（≈15ml）</td>
-<td>勾濃稠</td>
-</tr>
-<tr>
-<td>玉米粒（保留）</td>
-<td>少許</td>
-<td>增加口感（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="玉米濃湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥣</span><span class="dish-title">玉米濃湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 西式 / 香濃 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 玉米粒 | 1 罐 | 全聯罐頭，連汁一起用 |</p>
+<p>| 雞蛋 | 1 顆 | 打散做蛋花 |</p>
+<p>| 牛奶 | 1 碗 | 增加香濃（可用鮮奶油） |</p>
+<p>| 水 | 1～2 碗 | |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 太白粉水 | 1 大匙（≈15ml） | 勾濃稠 |</p>
+<p>| 玉米粒（保留） | 少許 | 增加口感（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>打泥</strong>：取大部分玉米粒加一點水，用調理棒或果汁機打成泥（湯體更濃）。</li>
 <li><strong>煮滾</strong>：玉米泥下鍋加水與牛奶煮滾，留一些整顆玉米粒增加口感。</li>
 <li><strong>勾芡</strong>：加鹽調味，倒入太白粉水邊倒邊攪到濃稠。</li>
@@ -2576,47 +1216,14 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>玉米打成泥就很濃，可少用奶油、較清爽健康。</li>
 <li>蛋液要在湯滾時繞圈慢倒，蛋花才細緻。</li>
-</ul></div></div><button class="dish-btn" data-name="味噌豆腐湯" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">味噌豆腐湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>嫩豆腐</td>
-<td>1 盒</td>
-<td>切小塊</td>
-</tr>
-<tr>
-<td>味噌</td>
-<td>2 大匙（≈30ml）</td>
-<td>全聯冷藏區有</td>
-</tr>
-<tr>
-<td>海帶芽</td>
-<td>1 小把</td>
-<td>乾燥的，泡水備用</td>
-</tr>
-<tr>
-<td>蔬菜</td>
-<td>適量</td>
-<td>冰箱剩的高麗菜、菇類都可</td>
-</tr>
-<tr>
-<td>蔥花</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>4 碗</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="味噌豆腐湯" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">味噌豆腐湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 嫩豆腐 | 1 盒 | 切小塊 |</p>
+<p>| 味噌 | 2 大匙（≈30ml） | 全聯冷藏區有 |</p>
+<p>| 海帶芽 | 1 小把 | 乾燥的，泡水備用 |</p>
+<p>| 蔬菜 | 適量 | 冰箱剩的高麗菜、菇類都可 |</p>
+<p>| 蔥花 | 適量 | |</p>
+<p>| 水 | 4 碗 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>煮滾</strong>：水煮滾，放入蔬菜與豆腐煮約 3 分鐘。</li>
 <li><strong>化味噌</strong>：味噌先用一點熱湯在碗裡調開，再倒回鍋中（避免結塊）。</li>
 <li><strong>不要大滾</strong>：加味噌後轉小火，不要再大滾（保留味噌香氣與益菌）。</li>
@@ -2624,52 +1231,15 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>味噌不要久煮大滾，香氣才不會跑掉。</li>
 <li>豆腐是高鈣高蛋白，對發育中的孩子很好。</li>
-</ul></div></div><button class="dish-btn" data-name="虱目魚蘆筍湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">虱目魚蘆筍湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘內（快速料理）</span><span class="chip">約 2 人份</span><span class="chip">湯品 / 台菜 / 初夏當季</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>蘆筍</td>
-<td>半斤（約 300g）</td>
-<td>當季最甜</td>
-</tr>
-<tr>
-<td>虱目魚肚</td>
-<td>1 塊</td>
-<td>挑大塊的，本身有油</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>3 瓣</td>
-<td>切片，口感好</td>
-</tr>
-<tr>
-<td>嫩薑</td>
-<td>適量</td>
-<td>切薑絲，可一起吃</td>
-</tr>
-<tr>
-<td>水</td>
-<td>1000 c.c.</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>約 2.5～3 鹽匙</td>
-<td>先放 2 匙再補</td>
-</tr>
-<tr>
-<td>味精（味素）</td>
-<td>約半鹽匙</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+</ul></div></div><button class="dish-btn" data-name="虱目魚蘆筍湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">虱目魚蘆筍湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘內（快速料理）</span><span class="chip">約 2 人份</span><span class="chip">湯品 / 台菜 / 初夏當季</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 蘆筍 | 半斤（約 300g） | 當季最甜 |</p>
+<p>| 虱目魚肚 | 1 塊 | 挑大塊的，本身有油 |</p>
+<p>| 蒜頭 | 3 瓣 | 切片，口感好 |</p>
+<p>| 嫩薑 | 適量 | 切薑絲，可一起吃 |</p>
+<p>| 水 | 1000 c.c. | |</p>
+<p>| 鹽 | 約 2.5～3 鹽匙 | 先放 2 匙再補 |</p>
+<p>| 味精（味素） | 約半鹽匙 | |</p>
 <blockquote>
 <p>💡 不用加油——虱目魚肚本身就有油。</p>
 </blockquote></div><div class="sec"><h3>作法步驟</h3><ol>
@@ -2684,50 +1254,21 @@ footer {
 <li>蘆筍含<strong>膳食纖維</strong>和<strong>葉酸</strong>，是很受歡迎的蔬菜。</li>
 <li><strong>蘆筍皮別丟</strong>：刮下來的皮可以加水煮成「蘆筍汁」，冰起來當退火茶喝，口感像清爽飲料。</li>
 <li>初夏蘆筍很甜，和虱目魚的清甜是絕配。</li>
-</ul></div></div></div></div><div class="cat" data-cat="蔬菜"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🥬</span><span class="cat-name">蔬菜</span></span><span class="cat-right"><span class="cat-badge">7 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="醋溜白菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">醋溜白菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">蔬菜 / 北方家常 / 快手菜 / 開胃</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>大白菜</td>
-<td>500g（約半顆）</td>
-<td>選菜梆多的山東白菜更脆</td>
-</tr>
-<tr>
-<td>紅辣椒</td>
-<td>1 支</td>
-<td>切小段，喜辣可加</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>3 瓣</td>
-<td>切末</td>
-</tr>
-<tr>
-<td>薑</td>
-<td>2 片</td>
-<td>切末</td>
-</tr>
-<tr>
-<td>食用油</td>
-<td>2 大匙（≈30ml）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>醬汁（先調好）</strong><br />
-| 調料 | 份量 | 備註 |<br />
-|------|------|------|<br />
-| 醬油 | 1 大匙（≈15ml） | |<br />
-| 烏醋 | 1 大匙（≈15ml） | 也可換白醋，風味稍淡 |<br />
-| 糖 | 1 小匙（≈5ml） | |<br />
-| 鹽 | 1/4 小匙（≈1.25ml） | |<br />
-| 太白粉 | 1 小匙（≈5ml） | 加一點點水調開 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div></div></div><div class="cat" data-cat="蔬菜"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🥬</span><span class="cat-name">蔬菜</span></span><span class="cat-right"><span class="cat-badge">7 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="醋溜白菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">醋溜白菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3～4 人份</span><span class="chip">蔬菜 / 北方家常 / 快手菜 / 開胃</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 大白菜 | 500g（約半顆） | 選菜梆多的山東白菜更脆 |</p>
+<p>| 紅辣椒 | 1 支 | 切小段，喜辣可加 |</p>
+<p>| 蒜頭 | 3 瓣 | 切末 |</p>
+<p>| 薑 | 2 片 | 切末 |</p>
+<p>| 食用油 | 2 大匙（≈30ml） | |</p>
+<p><strong>醬汁（先調好）</strong></p>
+<p>| 調料 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 醬油 | 1 大匙（≈15ml） | |</p>
+<p>| 烏醋 | 1 大匙（≈15ml） | 也可換白醋，風味稍淡 |</p>
+<p>| 糖 | 1 小匙（≈5ml） | |</p>
+<p>| 鹽 | 1/4 小匙（≈1.25ml） | |</p>
+<p>| 太白粉 | 1 小匙（≈5ml） | 加一點點水調開 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li>大白菜洗淨瀝乾，葉子剝小片，莖部斜切薄片（梆子與葉分開放）；蒜、薑切末，辣椒切段，醬汁預先調好備用。</li>
 <li>熱鍋下油，大火爆香辣椒、薑末、一半蒜末，聞到香氣即可。</li>
 <li>先下白菜梆子部分，大火翻炒 1 分鐘，再放葉子部分，繼續炒 1～2 分鐘，白菜微軟但仍有脆度。</li>
@@ -2736,42 +1277,13 @@ footer {
 <li><strong>醋要最後下</strong>：先加烏醋炒容易揮發酸氣，最佳時機是倒醬汁時鍋邊嗆入，留住香氣。</li>
 <li><strong>分開炒</strong>：梆子比葉子硬，先炒梆子再下葉子才不會外爛內生。</li>
 <li><strong>不蓋鍋蓋</strong>：白菜遇蓋容易出太多水，保持大火炒出鑊氣才好吃。</li>
-</ul></div></div><button class="dish-btn" data-name="蒜炒花椰菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥦</span><span class="dish-title">蒜炒花椰菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 高纖維 C / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>花椰菜</td>
-<td>1 顆</td>
-<td>綠花椰或白花椰皆可，切小朵</td>
-</tr>
-<tr>
-<td>蒜末</td>
-<td>1 大匙（≈15ml）</td>
-<td></td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>1 鍋</td>
-<td>汆燙用</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="蒜炒花椰菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥦</span><span class="dish-title">蒜炒花椰菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 高纖維 C / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 花椰菜 | 1 顆 | 綠花椰或白花椰皆可，切小朵 |</p>
+<p>| 蒜末 | 1 大匙（≈15ml） | |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 油 | 適量 | |</p>
+<p>| 水 | 1 鍋 | 汆燙用 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>汆燙</strong>：水加一點鹽煮滾，花椰菜下鍋燙 1～2 分鐘，撈起瀝乾（顏色更翠綠、炒時更快熟）。</li>
 <li><strong>爆香</strong>：熱鍋下油，蒜末炒香。</li>
 <li><strong>快炒</strong>：放入燙好的花椰菜，中大火快炒。</li>
@@ -2779,47 +1291,14 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>先汆燙能去菜味、保翠綠，也縮短下鍋拌炒時間。</li>
 <li>莖部較硬，可切小一點或先下鍋燙久一點。</li>
-</ul></div></div><button class="dish-btn" data-name="蒜炒玉米筍" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🌽</span><span class="dish-title">蒜炒玉米筍</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">8 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>玉米筍</td>
-<td>1 盒</td>
-<td>全聯常見，斜切段</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>2～3 瓣</td>
-<td>切片</td>
-</tr>
-<tr>
-<td>紅蘿蔔</td>
-<td>幾片</td>
-<td>配色（選用）</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>2 大匙（≈30ml）</td>
-<td>幫助炒熟</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="蒜炒玉米筍" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🌽</span><span class="dish-title">蒜炒玉米筍</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">8 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 玉米筍 | 1 盒 | 全聯常見，斜切段 |</p>
+<p>| 蒜頭 | 2～3 瓣 | 切片 |</p>
+<p>| 紅蘿蔔 | 幾片 | 配色（選用） |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 水 | 2 大匙（≈30ml） | 幫助炒熟 |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>切段</strong>：玉米筍洗淨斜切段（斷面大、更快熟也更入味）。</li>
 <li><strong>爆香</strong>：熱鍋下油，蒜片炒香。</li>
 <li><strong>快炒</strong>：下玉米筍（與紅蘿蔔片）中火炒，加一點水蓋一下幫助炒熟。</li>
@@ -2827,42 +1306,13 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>斜切增加斷面，更快熟也更入味。</li>
 <li>玉米筍本身就甜，調味簡單就好吃。</li>
-</ul></div></div><button class="dish-btn" data-name="清炒高麗菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">清炒高麗菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">8 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>高麗菜</td>
-<td>半顆</td>
-<td>手撕成片，比刀切更脆甜</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>2～3 瓣</td>
-<td>切片爆香</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>水或米酒</td>
-<td>1～2 大匙（≈15～30ml）</td>
-<td>幫助炒軟、保持翠綠</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="清炒高麗菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">清炒高麗菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">8 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 高麗菜 | 半顆 | 手撕成片，比刀切更脆甜 |</p>
+<p>| 蒜頭 | 2～3 瓣 | 切片爆香 |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 水或米酒 | 1～2 大匙（≈15～30ml） | 幫助炒軟、保持翠綠 |</p>
+<p>| 油 | 適量 | |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>洗切</strong>：高麗菜洗淨後用手撕成適口大片，瀝乾水分。</li>
 <li><strong>爆香</strong>：熱鍋下油，蒜片中小火炒到金黃出香。</li>
 <li><strong>大火快炒</strong>：轉大火下高麗菜快炒，沿鍋邊嗆一點水或米酒（產生蒸氣幫助炒軟）。</li>
@@ -2870,42 +1320,13 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>大火快炒、時間短，高麗菜才會脆甜不出太多水。</li>
 <li>手撕的斷面不規則，比刀切更容易入味。</li>
-</ul></div></div><button class="dish-btn" data-name="清炒花椰菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥦</span><span class="dish-title">清炒花椰菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>花椰菜</td>
-<td>1 顆</td>
-<td>綠或白花椰皆可，切小朵</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>2 瓣</td>
-<td>切片</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>水</td>
-<td>1 鍋</td>
-<td>汆燙用</td>
-</tr>
-<tr>
-<td>油</td>
-<td>少許</td>
-<td>清爽少油</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="清炒花椰菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥦</span><span class="dish-title">清炒花椰菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 花椰菜 | 1 顆 | 綠或白花椰皆可，切小朵 |</p>
+<p>| 蒜頭 | 2 瓣 | 切片 |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 水 | 1 鍋 | 汆燙用 |</p>
+<p>| 油 | 少許 | 清爽少油 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>汆燙</strong>：水加少許鹽煮滾，花椰菜燙 1～2 分鐘撈起瀝乾（保翠綠、縮短炒的時間）。</li>
 <li><strong>爆香</strong>：熱鍋下少許油，蒜片炒香。</li>
 <li><strong>快炒</strong>：下燙好的花椰菜中大火快炒。</li>
@@ -2913,47 +1334,14 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>先燙再炒，下鍋時間短、顏色更翠綠。</li>
 <li>清炒少油少鹽，吃得到花椰菜本身的清甜。</li>
-</ul></div></div><button class="dish-btn" data-name="清炒空心菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">清炒空心菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">6 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>空心菜</td>
-<td>1 把</td>
-<td>洗淨，梗與葉分開切段</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>3～4 瓣</td>
-<td>切片或拍碎爆香</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>1 大匙（≈15ml）</td>
-<td>嗆鍋保翠綠（選用）</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td></td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>1 條</td>
-<td>切圈配色（選用）</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="清炒空心菜" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥬</span><span class="dish-title">清炒空心菜</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">6 分鐘</span><span class="chip">約 3 人份</span><span class="chip">蔬菜 / 快手菜 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 空心菜 | 1 把 | 洗淨，梗與葉分開切段 |</p>
+<p>| 蒜頭 | 3～4 瓣 | 切片或拍碎爆香 |</p>
+<p>| 鹽 | 少許 | |</p>
+<p>| 米酒 | 1 大匙（≈15ml） | 嗆鍋保翠綠（選用） |</p>
+<p>| 油 | 適量 | |</p>
+<p>| 辣椒 | 1 條 | 切圈配色（選用） |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>洗切分梗葉</strong>：空心菜洗淨，梗較硬先切段、葉子另放（梗先下、葉後下才會均勻熟）。</li>
 <li><strong>爆香</strong>：熱鍋下油，蒜片（與辣椒）中火炒香。</li>
 <li><strong>先下梗</strong>：轉大火，先下空心菜梗快炒約 30 秒。</li>
@@ -2961,77 +1349,20 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>梗和葉分開下鍋，熟度才一致、不會梗生葉爛。</li>
 <li>全程大火、時間越短越翠綠，炒太久會出水變黑。</li>
-</ul></div></div><button class="dish-btn" data-name="絲瓜炒雞蛋" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥚</span><span class="dish-title">絲瓜炒雞蛋</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘內</span><span class="chip">約 2～3 人份</span><span class="chip">蔬食 / 快手菜 / 眷村家常</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
-<thead>
-<tr>
-<th>食材</th>
-<th>份量</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>絲瓜</td>
-<td>1 條</td>
-<td>挑表皮凸凸有紋路的（代表新鮮），光滑的多半是長途運送磨平的</td>
-</tr>
-<tr>
-<td>雞蛋</td>
-<td>3 顆</td>
-<td></td>
-</tr>
-<tr>
-<td>生薑</td>
-<td>適量</td>
-<td>切薑絲，一定要放（瓜類性寒，配薑去寒）；不愛薑味就少放</td>
-</tr>
-<tr>
-<td>蒜頭</td>
-<td>2～3 瓣</td>
-<td>切片，可有可無</td>
-</tr>
-<tr>
-<td>辣椒</td>
-<td>1 條</td>
-<td>切圈，主要配色用</td>
-</tr>
-<tr>
-<td>鹽</td>
-<td>少許</td>
-<td>蛋裡已有鹽，這裡只下一點點</td>
-</tr>
-<tr>
-<td>雞粉</td>
-<td>少許</td>
-<td>調蛋液用</td>
-</tr>
-<tr>
-<td>米酒</td>
-<td>少許</td>
-<td>調蛋液去腥</td>
-</tr>
-<tr>
-<td>味精</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>白胡椒粉</td>
-<td>少許</td>
-<td></td>
-</tr>
-<tr>
-<td>太白粉水</td>
-<td>少許</td>
-<td>最後勾薄芡</td>
-</tr>
-<tr>
-<td>油</td>
-<td>適量</td>
-<td>煎蛋的油要多一點</td>
-</tr>
-</tbody>
-</table></div><div class="sec"><h3>作法步驟</h3><ol>
+</ul></div></div><button class="dish-btn" data-name="絲瓜炒雞蛋" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥚</span><span class="dish-title">絲瓜炒雞蛋</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘內</span><span class="chip">約 2～3 人份</span><span class="chip">蔬食 / 快手菜 / 眷村家常</span></div><div class="sec"><h3>食材・調料</h3><p>| 食材 | 份量 | 備註 |</p>
+<p>|------|------|------|</p>
+<p>| 絲瓜 | 1 條 | 挑表皮凸凸有紋路的（代表新鮮），光滑的多半是長途運送磨平的 |</p>
+<p>| 雞蛋 | 3 顆 | |</p>
+<p>| 生薑 | 適量 | 切薑絲，一定要放（瓜類性寒，配薑去寒）；不愛薑味就少放 |</p>
+<p>| 蒜頭 | 2～3 瓣 | 切片，可有可無 |</p>
+<p>| 辣椒 | 1 條 | 切圈，主要配色用 |</p>
+<p>| 鹽 | 少許 | 蛋裡已有鹽，這裡只下一點點 |</p>
+<p>| 雞粉 | 少許 | 調蛋液用 |</p>
+<p>| 米酒 | 少許 | 調蛋液去腥 |</p>
+<p>| 味精 | 少許 | |</p>
+<p>| 白胡椒粉 | 少許 | |</p>
+<p>| 太白粉水 | 少許 | 最後勾薄芡 |</p>
+<p>| 油 | 適量 | 煎蛋的油要多一點 |</p></div><div class="sec"><h3>作法步驟</h3><ol>
 <li><strong>削皮</strong>：絲瓜頭尾切掉，削皮時<strong>不要削太深</strong>，留一點綠色——成品顏色漂亮、口感也比較清脆。</li>
 <li><strong>切法</strong>：剖開確認是嫩的，<strong>不要切成一片片的平片</strong>（容易一炒就軟）。改用斜的/滾刀切法，炒出來口感比較脆。</li>
 <li><strong>調蛋液</strong>：3 顆蛋打散，先下少許鹽、雞粉，再加米酒去腥，打勻。</li>
@@ -3192,7 +1523,7 @@ function noteExport() {
   const a = nLoad(); if (!a.length) { alert('沒有筆記可匯出'); return; }
   const txt = a.map(n => `[${n.d}][${n.c}] ${n.t}`).join('\n');
   const u = URL.createObjectURL(new Blob([txt], {type:'text/plain'}));
-  const l = document.createElement('a'); l.href = u; l.download = '料理路上筆記.txt'; l.click();
+  const l = document.createElement('a'); l.href = u; l.download = '健康料理筆記.txt'; l.click();
 }
 function noteToggle() {
   document.getElementById('npanel').classList.toggle('open');
