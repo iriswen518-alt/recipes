@@ -406,6 +406,38 @@ ol li strong { color: var(--deep); }
   letter-spacing: .06em;
 }
 
+/* ── DIET FILTER BAR ─────────────────────────────── */
+.dietbar {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.diet-btn {
+  flex-shrink: 0;
+  border: 1.5px solid var(--accent, #019AB3);
+  background: transparent;
+  color: var(--accent, #019AB3);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .18s;
+}
+.diet-btn.on {
+  background: linear-gradient(135deg, #17B5AD, #019AB3);
+  color: #fff;
+  border-color: transparent;
+}
+.diet-chip {
+  background: #e0f7fa !important;
+  color: #006064 !important;
+  font-weight: 700;
+}
+
 /* ── HOME BUTTON ─────────────────────────────────── */
 .home-btn {
   position: fixed;
@@ -490,6 +522,12 @@ footer {
     </div>
   </div>
 
+  <div class="dietbar">
+    <button class="diet-btn on" onclick="setDiet(this,'all')">全部</button>
+    <button class="diet-btn" onclick="setDiet(this,'高蛋白飲食')">高蛋白飲食</button>
+    <button class="diet-btn" onclick="setDiet(this,'211餐盤')">211 餐盤</button>
+  </div>
+
   <div class="cats">
     <div class="cat" data-cat="飯類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍚</span><span class="cat-name">飯類</span></span><span class="cat-right"><span class="cat-badge">6 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="黃金蛋炒飯（清冰箱）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">黃金蛋炒飯（清冰箱）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">飯類 / 快手菜 / 清冰箱 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
@@ -544,7 +582,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>用隔夜冷飯水分少，炒起來才不會黏成一團。</li>
 <li>蛋液先拌飯＝「黃金炒飯」，比後下蛋更香。</li>
-</ul></div></div><button class="dish-btn" data-name="親子丼（滑蛋雞肉丼）" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍱</span><span class="dish-title">親子丼（滑蛋雞肉丼）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="親子丼（滑蛋雞肉丼）" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍱</span><span class="dish-title">親子丼（滑蛋雞肉丼）</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -776,7 +814,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>多做的部分放涼後分裝冷凍，可保存 2～3 週。</li>
 <li>平日只要加熱滷肉＋煮飯＋燙青菜，10 分鐘開飯。</li>
-</ul></div></div><button class="dish-btn" data-name="一鍋雞腿炊飯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">一鍋雞腿炊飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 30 分鐘</span><span class="chip">約 3 人份（媽媽＋2 個女兒）</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="一鍋雞腿炊飯" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍚</span><span class="dish-title">一鍋雞腿炊飯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋電鍋 30 分鐘</span><span class="chip">約 3 人份（媽媽＋2 個女兒）</span><span class="chip">飯類 / 快手菜 / 一鍋到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1086,7 +1124,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>麵和湯分開煮，湯頭才清澈不糊、不會死鹹。</li>
 <li>有現成高湯（或前一天的排骨湯）湯頭更鮮甜。</li>
-</ul></div></div></div></div><div class="cat" data-cat="肉類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍖</span><span class="cat-name">肉類</span></span><span class="cat-right"><span class="cat-badge">9 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="黑胡椒梅花豬排" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">黑胡椒梅花豬排</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 西式 / 快手菜 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div></div></div><div class="cat" data-cat="肉類"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🍖</span><span class="cat-name">肉類</span></span><span class="cat-right"><span class="cat-badge">9 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="黑胡椒梅花豬排" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">黑胡椒梅花豬排</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 西式 / 快手菜 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1313,7 +1351,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>中途刷醬 1～2 次，表面才會油亮上色。</li>
 <li>一次多烤幾條，放涼分裝冷凍，可保存 2～3 週。</li>
-</ul></div></div><button class="dish-btn" data-name="蒜泥白肉" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">蒜泥白肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">20 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 川式家常 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="蒜泥白肉" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🥩</span><span class="dish-title">蒜泥白肉</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">20 分鐘</span><span class="chip">約 3 人份</span><span class="chip">肉類 / 川式家常 / 清爽 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1434,7 +1472,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>番茄要燉到化，醬汁才濃郁酸甜。</li>
 <li>一鍋多做、分裝冷凍可保存 2～3 週。</li>
-</ul></div></div><button class="dish-btn" data-name="烤盤雞肉時蔬" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">烤盤雞肉時蔬</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋烤箱 25 分鐘</span><span class="chip">約 3 人份</span><span class="chip">烤箱料理 / 免顧火 / 一盤到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="烤盤雞肉時蔬" data-diet="高蛋白飲食, 211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍗</span><span class="dish-title">烤盤雞肉時蔬</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">備料 5 分鐘＋烤箱 25 分鐘</span><span class="chip">約 3 人份</span><span class="chip">烤箱料理 / 免顧火 / 一盤到底 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1487,7 +1525,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>一盤就有蛋白質＋多種蔬菜，顏色豐富孩子更願意吃。</li>
 <li>根莖類切小塊一點才會跟雞肉同時熟。</li>
-</ul></div></div><button class="dish-btn" data-name="日式咖哩雞" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍛</span><span class="dish-title">日式咖哩雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">肉類 / 常備菜 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="日式咖哩雞" data-diet="211餐盤" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍛</span><span class="dish-title">日式咖哩雞</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">30 分鐘（多做可冷凍）</span><span class="chip">約 4～5 人份（可分裝冷凍）</span><span class="chip">肉類 / 常備菜 / 可冷凍 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1598,7 +1636,7 @@ footer {
 <li><strong>冷鍋慢煎是關鍵</strong>：若熱鍋下雞皮，雞皮會迅速收縮，油脂被鎖在裡面，且皮容易焦黑，內部卻未熟。</li>
 <li><strong>拭乾水分防噴油</strong>：下鍋前一定要將水分擦得非常乾淨，否則水油相遇會嚴重噴油，也會影響外皮的酥脆度。</li>
 <li><strong>靜置鎖汁</strong>：熱肉剛煎好時，切開會使肉汁大量流失。靜置幾分鐘能讓肉汁均勻回流，肉質才會軟嫩多汁。</li>
-</ul></div></div></div></div><div class="cat" data-cat="海鮮"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🐟</span><span class="cat-name">海鮮</span></span><span class="cat-right"><span class="cat-badge">3 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="香煎鮭魚" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎鮭魚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 Omega-3 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div></div></div><div class="cat" data-cat="海鮮"><button class="cat-btn" onclick="toggleCat(this)"><span class="cat-label"><span class="cat-emoji">🐟</span><span class="cat-name">海鮮</span></span><span class="cat-right"><span class="cat-badge">3 道</span><span class="cat-chevron">▼</span></span></button><div class="cat-panel"><button class="dish-btn" data-name="香煎鮭魚" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎鮭魚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 Omega-3 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1636,7 +1674,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>鮭魚油脂多，可不加油乾煎，皮會自然酥脆。</li>
 <li>不要一直翻動，定型後再翻才不會散。</li>
-</ul></div></div><button class="dish-btn" data-name="香煎虱目魚肚" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎虱目魚肚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="香煎虱目魚肚" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🐟</span><span class="dish-title">香煎虱目魚肚</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 2～3 人份</span><span class="chip">海鮮 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1679,7 +1717,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>魚肚一定要擦乾再下鍋，否則水油相遇會嚴重噴油。</li>
 <li>冷鍋下、定型後再翻，魚皮才酥脆不破。</li>
-</ul></div></div><button class="dish-btn" data-name="滑蛋蝦仁" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍤</span><span class="dish-title">滑蛋蝦仁</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 蛋類 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="滑蛋蝦仁" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🍤</span><span class="dish-title">滑蛋蝦仁</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">12 分鐘</span><span class="chip">約 3 人份</span><span class="chip">海鮮 / 蛋類 / 快手菜 / 高蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -1871,7 +1909,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>蛋與水 1：1.5 是滑嫩黃金比例。</li>
 <li>過篩＋鍋蓋留縫＝表面光滑無蜂窩孔的關鍵。</li>
-</ul></div></div><button class="dish-btn" data-name="家常紅燒豆腐" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">家常紅燒豆腐</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">豆製品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="家常紅燒豆腐" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">家常紅燒豆腐</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">15 分鐘</span><span class="chip">約 3 人份</span><span class="chip">豆製品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -2088,7 +2126,7 @@ footer {
 </ol></div><div class="sec tip-box"><h3>小知識</h3><ul>
 <li>玉米打成泥就很濃，可少用奶油、較清爽健康。</li>
 <li>蛋液要在湯滾時繞圈慢倒，蛋花才細緻。</li>
-</ul></div></div><button class="dish-btn" data-name="味噌豆腐湯" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">味噌豆腐湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
+</ul></div></div><button class="dish-btn" data-name="味噌豆腐湯" data-diet="高蛋白飲食" onclick="toggleDish(this)"><span class="dish-left"><span class="dish-ico">🧈</span><span class="dish-title">味噌豆腐湯</span></span><span class="dish-right"><span class="dish-label">食譜</span><span class="dish-chevron">▼</span></span></button><div class="dish-card"><div class="meta"><span class="chip">10 分鐘</span><span class="chip">約 3 人份</span><span class="chip">湯品 / 快手菜 / 高鈣蛋白 / 兒童營養</span></div><div class="sec"><h3>食材・調料</h3><table><colgroup><col class="c-name"><col class="c-qty"><col class="c-note"></colgroup>
 <thead>
 <tr>
 <th>食材</th>
@@ -2541,6 +2579,39 @@ footer {
 
 <script>
 
+var _dietFilter = 'all';
+
+function setDiet(btn, d) {
+  _dietFilter = d;
+  document.querySelectorAll('.diet-btn').forEach(function(b) { b.classList.remove('on'); });
+  btn.classList.add('on');
+  applyFilters();
+}
+
+function applyFilters() {
+  var t = (document.getElementById('q').value || '').trim().toLowerCase();
+  var anyAll = false;
+  document.querySelectorAll('.cat').forEach(function(c) {
+    var any = false;
+    c.querySelectorAll('.dish-btn').forEach(function(b) {
+      var n = (b.getAttribute('data-name') || '').toLowerCase();
+      var dv = (b.getAttribute('data-diet') || '');
+      var card = b.nextElementSibling;
+      var dietOk = (_dietFilter === 'all') || dv.indexOf(_dietFilter) >= 0;
+      var textOk = !t || n.indexOf(t) >= 0 || (card && card.textContent.toLowerCase().indexOf(t) >= 0);
+      var hit = dietOk && textOk;
+      b.style.display = hit ? 'flex' : 'none';
+      if (card) card.style.display = hit ? '' : 'none';
+      if (hit) any = true;
+    });
+    c.style.display = any ? 'block' : 'none';
+    if (any && (t || _dietFilter !== 'all')) c.classList.add('open');
+    if (!t && _dietFilter === 'all') c.classList.remove('open');
+    if (any) anyAll = true;
+  });
+  document.getElementById('nohit').style.display = (!anyAll) ? 'block' : 'none';
+}
+
 function toggleCat(b) {
   var c = b.parentElement;
   c.classList.toggle('open');
@@ -2556,29 +2627,16 @@ function toggleDish(b) {
 
 var q = document.getElementById('q');
 q.addEventListener('input', function() {
-  var t = this.value.trim().toLowerCase();
-  var anyAll = false;
-  document.querySelectorAll('.cat').forEach(function(c) {
-    var any = false;
-    c.querySelectorAll('.dish-btn').forEach(function(b) {
-      var n = (b.getAttribute('data-name') || '').toLowerCase();
-      var card = b.nextElementSibling;
-      var hit = !t || n.indexOf(t) >= 0 || (card && card.textContent.toLowerCase().indexOf(t) >= 0);
-      b.style.display = hit ? 'flex' : 'none';
-      if (card && !hit) card.style.display = 'none';
-      if (hit) any = true;
-    });
-    c.style.display = (any || !t) ? 'block' : 'none';
-    if (t && any) c.classList.add('open');
-    if (!t) c.classList.remove('open');
-    if (any) anyAll = true;
-  });
-  document.getElementById('nohit').style.display = (t && !anyAll) ? 'block' : 'none';
+  applyFilters();
 });
 
 document.getElementById('home').addEventListener('click', function() {
   var s = document.getElementById('q');
   if (s) s.value = '';
+  _dietFilter = 'all';
+  document.querySelectorAll('.diet-btn').forEach(function(b) { b.classList.remove('on'); });
+  var first = document.querySelector('.diet-btn');
+  if (first) first.classList.add('on');
   document.querySelectorAll('.cat').forEach(function(c) {
     c.classList.remove('open');
     c.style.display = 'block';
