@@ -406,63 +406,61 @@ ol li strong { color: var(--deep); }
   letter-spacing: .06em;
 }
 
-/* ── DIET FILTER BAR ─────────────────────────────── */
-.dietbar {
-  display: flex;
-  gap: 8px;
-  padding: 0 16px 14px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.diet-btn {
-  flex-shrink: 0;
-  border: 1.5px solid var(--accent, #019AB3);
-  background: transparent;
-  color: var(--accent, #019AB3);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 6px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all .18s;
-}
-.diet-btn.on {
-  background: linear-gradient(135deg, #17B5AD, #019AB3);
-  color: #fff;
-  border-color: transparent;
-}
 .diet-chip {
   background: #e0f7fa !important;
   color: #006064 !important;
   font-weight: 700;
 }
 
-/* ── HOME BUTTON ─────────────────────────────────── */
-.home-btn {
+/* ── BOTTOM NAV BAR ──────────────────────────────── */
+.bottom-nav {
   position: fixed;
-  right: 18px;
-  bottom: 22px;
-  z-index: 20;
-  background: linear-gradient(135deg, var(--deep), var(--accent));
-  color: #fff;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9000;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(1,154,179,0.14);
+  box-shadow: 0 -2px 18px rgba(0,61,145,0.10);
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.bnav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
   border: none;
-  border-radius: 999px;
-  padding: 12px 20px;
-  font-size: 14px;
+  padding: 8px 0 10px;
+  cursor: pointer;
+  color: #9bb5c2;
+  font-size: 0.65rem;
   font-weight: 700;
   font-family: inherit;
-  letter-spacing: .04em;
-  box-shadow: 0 4px 18px rgba(0,61,145,.3);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  -webkit-appearance: none;
-  transition: box-shadow .2s, transform .1s;
+  letter-spacing: 0.03em;
+  transition: color 0.18s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
-
-.home-btn:active { transform: scale(.96); }
+.bnav-btn.active { color: var(--accent); }
+.bnav-btn svg { width: 22px; height: 22px; }
+.bnav-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 2px;
+  opacity: 0;
+  transition: opacity .18s;
+}
+.bnav-btn.active .bnav-dot { opacity: 1; }
 
 /* ── FOOTER ──────────────────────────────────────── */
 footer {
@@ -481,8 +479,8 @@ footer {
 }
 
 /* note widget */
-.nfab { position: fixed; bottom: 22px; right: 16px; z-index: 60; background: var(--deep); color: #fff; border: none; border-radius: 24px; padding: 10px 18px; font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: 0 3px 12px rgba(0,61,145,.3); letter-spacing: .5px; }
-.npanel { position: fixed; bottom: 0; left: 0; right: 0; max-width: 680px; margin: 0 auto; z-index: 70; background: var(--card); border-radius: 20px 20px 0 0; box-shadow: 0 -4px 24px rgba(0,61,145,.18); padding: 18px 16px 36px; max-height: 78vh; overflow-y: auto; transform: translateY(100%); transition: transform .28s cubic-bezier(.4,0,.2,1); }
+.nfab { display: none; }
+.npanel { position: fixed; bottom: 0; left: 0; right: 0; max-width: 680px; margin: 0 auto; z-index: 10000; background: var(--card); border-radius: 20px 20px 0 0; box-shadow: 0 -4px 24px rgba(0,61,145,.18); padding: 18px 16px 80px; max-height: 78vh; overflow-y: auto; transform: translateY(100%); transition: transform .28s cubic-bezier(.4,0,.2,1); }
 .npanel.open { transform: translateY(0); }
 .nhdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px; }
 .nhdr h3 { font-size: 15px; font-weight: 800; color: var(--deep); }
@@ -520,12 +518,6 @@ footer {
     <div class="search-wrap">
       <input id="q" type="search" placeholder="搜尋菜名或食材…" autocomplete="off">
     </div>
-  </div>
-
-  <div class="dietbar">
-    <button class="diet-btn on" onclick="setDiet(this,'all')">全部</button>
-    <button class="diet-btn" onclick="setDiet(this,'高蛋白飲食')">高蛋白飲食</button>
-    <button class="diet-btn" onclick="setDiet(this,'211餐盤')">211 餐盤</button>
   </div>
 
   <div class="cats">
@@ -2846,7 +2838,28 @@ footer {
 
 </div>
 
-<button id="home" class="home-btn" title="回首頁">⌂ 首頁</button>
+<nav class="bottom-nav" id="bottomNav">
+  <button class="bnav-btn active" id="bnav-all" onclick="setTab(this,'all')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    全部食譜
+    <div class="bnav-dot"></div>
+  </button>
+  <button class="bnav-btn" id="bnav-protein" onclick="setTab(this,'高蛋白飲食')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    高蛋白
+    <div class="bnav-dot"></div>
+  </button>
+  <button class="bnav-btn" id="bnav-211" onclick="setTab(this,'211餐盤')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    211 餐盤
+    <div class="bnav-dot"></div>
+  </button>
+  <button class="bnav-btn" id="bnav-note" onclick="setTab(this,'notes')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+    廚房筆記
+    <div class="bnav-dot"></div>
+  </button>
+</nav>
 
 <button class="nfab" id="nfab" onclick="noteToggle()">📌 筆記</button>
 <div class="npanel" id="npanel">
@@ -2866,12 +2879,20 @@ footer {
 
 var _dietFilter = 'all';
 
-function setDiet(btn, d) {
+function setTab(btn, d) {
+  if (d === 'notes') {
+    noteToggle();
+    return;
+  }
   _dietFilter = d;
-  document.querySelectorAll('.diet-btn').forEach(function(b) { b.classList.remove('on'); });
-  btn.classList.add('on');
+  document.querySelectorAll('.bnav-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('q').value = '';
   applyFilters();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function setDiet(btn, d) { setTab(btn, d); }
 
 function applyFilters() {
   var t = (document.getElementById('q').value || '').trim().toLowerCase();
@@ -2915,29 +2936,9 @@ q.addEventListener('input', function() {
   applyFilters();
 });
 
-document.getElementById('home').addEventListener('click', function() {
-  var s = document.getElementById('q');
-  if (s) s.value = '';
-  _dietFilter = 'all';
-  document.querySelectorAll('.diet-btn').forEach(function(b) { b.classList.remove('on'); });
-  var first = document.querySelector('.diet-btn');
-  if (first) first.classList.add('on');
-  document.querySelectorAll('.cat').forEach(function(c) {
-    c.classList.remove('open');
-    c.style.display = 'block';
-  });
-  document.querySelectorAll('.dish-btn').forEach(function(b) {
-    b.style.display = 'flex';
-    b.classList.remove('open');
-    var lbl = b.querySelector('.dish-label');
-    if (lbl) lbl.textContent = '食譜';
-  });
-  document.querySelectorAll('.dish-card').forEach(function(d) {
-    d.classList.remove('open');
-    d.style.display = '';
-  });
-  document.getElementById('nohit').style.display = 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+var homeEl = document.getElementById('home');
+if (homeEl) homeEl.addEventListener('click', function() {
+  setTab(document.getElementById('bnav-all'), 'all');
 });
 
 // 廚房筆記 widget
@@ -2971,9 +2972,15 @@ function noteExport() {
 function noteToggle() {
   document.getElementById('npanel').classList.toggle('open');
   const open = document.getElementById('npanel').classList.contains('open');
-  document.getElementById('nfab').style.opacity = open ? '0' : '1';
-  document.getElementById('nfab').style.pointerEvents = open ? 'none' : 'auto';
-  if (open) nRender();
+  var noteBtn = document.getElementById('bnav-note');
+  if (open) {
+    document.querySelectorAll('.bnav-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (noteBtn) noteBtn.classList.add('active');
+    nRender();
+  } else {
+    if (noteBtn) noteBtn.classList.remove('active');
+    document.getElementById('bnav-all').classList.add('active');
+  }
 }
 document.getElementById('ntxt').addEventListener('keydown', e => { if (e.key === 'Enter') noteAdd(); });
 
