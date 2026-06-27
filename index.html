@@ -220,6 +220,11 @@ header .sub {
 
 .cat.open .cat-panel { display: block; }
 
+/* 黃色高亮：展開的分類折疊區塊標題（沿用 morning-board 規格；巢狀內層菜色不套） */
+.cat.open .cat-btn { background: #fff8d6; }
+.cat.open .cat-name { color: #8a6d00; }
+.cat.open .cat-chevron { color: #c79a00; }
+
 /* ── DISH ROWS ───────────────────────────────────── */
 .dish-btn {
   width: 100%;
@@ -510,6 +515,9 @@ ol li strong { color: var(--deep); }
   white-space: nowrap;
 }
 .bnav-btn.active { color: var(--accent); }
+/* 黃色高亮：選中分頁（沿用 morning-board 規格） */
+.bnav-btn.active { color: #8a6d00; background: #fff8d6; border-radius: 12px; }
+.bnav-btn.active svg { color: #c79a00; }
 .bnav-btn svg { width: 22px; height: 22px; }
 .bnav-dot {
   width: 4px; height: 4px;
